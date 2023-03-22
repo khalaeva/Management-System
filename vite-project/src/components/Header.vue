@@ -33,7 +33,7 @@
 </script>
 
 <style lang="scss">
-img {
+.header img {
     height: 40px;
     width: 40px;
 }
