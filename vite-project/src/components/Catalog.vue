@@ -1,5 +1,5 @@
 <template>
-    <a class="product-link" href="#">
+    <router-link to="/prod1" class="product-link">
         <span class="product"> 
             <img class="product__image" src="/img/1.jpeg">
             <div class="product-about">
@@ -14,8 +14,8 @@
                 <button type="button" class="btn btn-primary">В корзину</button>
             </div>
         </span>
-    </a>
-    <a class="product-link" href="#">
+    </router-link>
+    <router-link to="/prod2" class="product-link">
         <span class="product"> 
             <img class="product__image" src="/img/1.jpeg">
             <div class="product-about">
@@ -30,8 +30,8 @@
                 <button type="button" class="btn btn-primary">В корзину</button>
             </div>
         </span>
-    </a>
-    <a class="product-link" href="#">
+    </router-link>
+    <router-link to="/prod3" class="product-link">
         <span class="product"> 
             <img class="product__image" src="/img/1.jpeg">
             <div class="product-about">
@@ -46,7 +46,7 @@
                 <button type="button" class="btn btn-primary">В корзину</button>
             </div>
         </span>
-    </a>
+    </router-link>
 </template>
 
 <script setup>

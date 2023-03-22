@@ -7,32 +7,25 @@
                         <img src="/svg/menu.svg" alt="menu">
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                      <li><a class="dropdown-item" href="#">Действие</a></li>
-                      <li><a class="dropdown-item" href="#">Другое действие</a></li>
-                      <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
+                      <li><router-link to="/phones" class="dropdown-item">Phones</router-link></li>
+                      <li><router-link to="/acces" class="dropdown-item">Accessories</router-link></li>
+                      <li><router-link to="/audio" class="dropdown-item">Audio</router-link></li>
                     </ul>
                 </div>
             </div>
-            <a href="#" class="header-logo">Online Shop</a>
+            <router-link to="/" class="header-logo">Online Shop</router-link>
             <div class="header-top-right">
                 <div class="header-top-right__cart">
-                    <a href="#">
+                    <router-link to="/">
                         <img src="/svg/cart.svg" alt="cart">
-                    </a>
+                    </router-link>
                 </div>
                 <div class="header-top-right__profile">
-                    <a href="#">
+                    <router-link to="/">
                         <img src="/svg/user.svg" alt="user">
-                    </a>
+                    </router-link>
                 </div>
             </div>
-        </div>
-        <div class="header-menu">
-            <router-link 
-                class="header-menu__link"
-                :to="element.path" 
-                v-for="(element, i) of menu"
-                :key="i">{{ element.name }}</router-link>
         </div>
     </header>
 
