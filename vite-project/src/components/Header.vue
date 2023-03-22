@@ -1,8 +1,17 @@
 <template>
     <header class="header">
         <div class="header-top">
-            <div class="header-top-search">
-                <img src="/svg/menu.svg" alt="menu">
+            <div class="header-top-menu">
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        <img src="/svg/menu.svg" alt="menu">
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                      <li><a class="dropdown-item" href="#">Действие</a></li>
+                      <li><a class="dropdown-item" href="#">Другое действие</a></li>
+                      <li><a class="dropdown-item" href="#">Что-то еще здесь</a></li>
+                    </ul>
+                </div>
             </div>
             <a href="#" class="header-logo">Online Shop</a>
             <div class="header-top-right">
@@ -26,6 +35,8 @@
                 :key="i">{{ element.name }}</router-link>
         </div>
     </header>
+
+    
 </template>
 
 <script setup>
