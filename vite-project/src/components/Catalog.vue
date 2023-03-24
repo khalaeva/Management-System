@@ -1,56 +1,31 @@
 <template>
-    <router-link to="/prod1" class="product-link">
-        <span class="product"> 
-            <img class="product__image" src="/img/1.jpeg">
+    <router-link :to="`product${prod.id}`" class="product-link" v-for="prod in products">
+        <span class="product" > 
+            <img class="product__image" :src="prod.image">
             <div class="product-about">
-                <p>Name of product</p>
-                <p>About product sdfsflsdfkal sdflsdhf sdjfh dflskdjf clvh</p>
+                <p>{{ prod.name }}</p>
+                <p>{{ prod.description }}</p>
             </div>
             <div class="product-status">
-                <p>In stock</p>
+                <p>{{ prod.status }} </p>
             </div>
             <div class="product-price">
-                <p>1000 $</p>
+                <p>{{ prod.price }} $</p>
                 <button type="button" class="btn btn-primary">В корзину</button>
             </div>
         </span>
     </router-link>
-    <router-link to="/prod2" class="product-link">
-        <span class="product"> 
-            <img class="product__image" src="/img/1.jpeg">
-            <div class="product-about">
-                <p>Name of product</p>
-                <p>About product sdfsflsdfkal sdflsdhf sdjfh dflskdjf clvh</p>
-            </div>
-            <div class="product-status">
-                <p>In stock</p>
-            </div>
-            <div class="product-price">
-                <p>1000 $</p>
-                <button type="button" class="btn btn-primary">В корзину</button>
-            </div>
-        </span>
-    </router-link>
-    <router-link to="/prod3" class="product-link">
-        <span class="product"> 
-            <img class="product__image" src="/img/1.jpeg">
-            <div class="product-about">
-                <p>Name of product</p>
-                <p>About product sdfsflsdfkal sdflsdhf sdjfh dflskdjf clvh</p>
-            </div>
-            <div class="product-status">
-                <p>In stock</p>
-            </div>
-            <div class="product-price">
-                <p>1000 $</p>
-                <button type="button" class="btn btn-primary">В корзину</button>
-            </div>
-        </span>
-    </router-link>
+    
 </template>
 
 <script setup>
+import { ref } from "vue"
 
+const props = defineProps({
+    products: {
+        required: true
+    }
+})
 </script>
 
 <style lang="scss" scoped>
@@ -59,21 +34,22 @@
         color: black;
     }
     .product { 
+        margin: 0 100px 10px 100px;
         display: flex; 
-        margin-bottom: 10px;
         height: 250px; 
         &-about {
             padding: 20px;
-            width: 600px;
+            width: 70%;
         }
         &-status {
+            width: 20%;
             padding: 20px;
         }
         &-price {
+            width: 10%;
             padding: 20px;
         }
         &__image {
-            margin-left: 50px;
             width: 180px;
             height: 230px;
             vertical-align: middle;

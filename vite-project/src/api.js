@@ -7,9 +7,9 @@ export const HTTP = axios.create({
 });
 
 export default {
-    async getPopularProducts() {
+    async getProducts() {
         try {
-            const response = await HTTP.get('/products/popular')
+            const response = await HTTP.get('/products')
             console.log(response.data);
             return response.data;
         } catch (e) {
