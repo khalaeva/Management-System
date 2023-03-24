@@ -1,10 +1,14 @@
 <template>
     <Header/>
-    <section class="pb-4">
-        <div class="rounded-5">
-          
-          <section  class="w-100 p-4 d-flex justify-content-center pb-4">
-            <form style="width: 22rem;">
+    <div class="mb-5 mb-lg-0" style="width: 50%; margin-left: auto;
+    margin-right: auto;">
+        <div class="card cascading-right" style="
+                border: none;
+                
+                ">
+          <div class="card-body p-5 shadow-5 text-center">
+            <h2 class="fw-bold mb-5">Authorization</h2>
+            <form>
               <!-- Email input -->
               <div class="form-outline mb-4">
                 <input type="email" id="form2Example1" class="form-control">
@@ -33,13 +37,12 @@
       
               <!-- Register buttons -->
               <div class="text-center">
-                <p>Not a member? <a href="#!">Register</a></p>
+                <p>Not a member? <router-link to="/register">Register</router-link></p>
               </div>
             </form>
-          </section>
-
+          </div>
         </div>
-      </section>
+        </div>
 </template>
 
 <script setup>
