@@ -1,6 +1,6 @@
 <template>
-    <router-link :to="`product${prod.id}`" class="product-link" v-for="prod in products">
-        <span class="product" > 
+    <!--<router-link :to="`product${prod.id}`" class="product-link" v-for="prod in products"> -->
+         <span class="product" v-for="prod in products"> 
             <img class="product__image" :src="prod.image">
             <div class="product-about">
                 <p>{{ prod.name }}</p>
@@ -14,7 +14,7 @@
                 <button type="button" class="btn btn-primary">В корзину</button>
             </div>
         </span>
-    </router-link>
+    <!-- </router-link> -->
     
 </template>
 

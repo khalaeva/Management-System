@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router';
 
 import index from '@/views/index.vue'
-import product from '@/views/Product.vue'
+import auth from '@/views/auth.vue'
 
 const router = createRouter({
     history: createWebHistory(),
@@ -12,9 +12,9 @@ const router = createRouter({
             component: index
         },
         {
-            path: '/product:id',
-            name: 'product',
-            component: product
+            path: '/auth',
+            name: 'auth',
+            component: auth
         }
     ]
 })

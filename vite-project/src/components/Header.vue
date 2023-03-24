@@ -21,7 +21,7 @@
                     </router-link>
                 </div>
                 <div class="header-top-right__profile">
-                    <router-link to="/">
+                    <router-link to="/auth">
                         <img src="/svg/user.svg" alt="user">
                     </router-link>
                 </div>
