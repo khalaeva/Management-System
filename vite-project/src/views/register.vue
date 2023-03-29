@@ -2,14 +2,14 @@
     <Header/>
     <div class="mb-5 mb-lg-0">
         <div class="card cascading-right" style="
-                width: 50%;
-                margin-left: auto;
-                margin-right: auto;
-                border: none;
-                ">
+        width: 50%;
+        margin-left: auto;
+        margin-right: auto;
+        border: none;
+        ">
           <div class="card-body p-5 shadow-5 text-center">
             <h2 class="fw-bold mb-5">Sign up now</h2>
-            <form action="http://localhost:3000/users" method="post">
+            <form>
               <!-- 2 column grid layout with text inputs for the first and last names -->
               <div class="row">
                 <div class="col-md-6 mb-4">
@@ -51,12 +51,4 @@
 
 <script setup>
 import Header from '@/components/Header.vue';
-
-import { ref } from "vue"
-
-const props = defineProps({
-    products: {
-        required: true
-    }
-})
 </script>

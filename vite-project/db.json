@@ -30,7 +30,8 @@
   ],
   "users": [
     {
-      "id": 1
+      "first_name": "Anna", 
+      "last_name": "Khalaeva"
     }
   ]
 }
