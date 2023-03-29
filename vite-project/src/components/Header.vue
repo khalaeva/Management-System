@@ -15,11 +15,10 @@
             </div>
             <router-link to="/" class="header-logo">Online Shop</router-link>
             <div class="header-top-right">
-                <div class="header-top-right__cart">
-                    <router-link to="/">
+                    <router-link to="/cart" class="header-top-right__cart">
                         <img src="/svg/cart.svg" alt="cart">
+                        <p class="header-top-right__cart_count">(0)</p>
                     </router-link>
-                </div>
                 <div class="header-top-right__profile">
                     <router-link to="/auth">
                         <img src="/svg/user.svg" alt="user">
@@ -56,7 +55,15 @@
             align-items: center;
             justify-content: flex-end;
             &__cart {
+                text-decoration: none;
+                display: flex;
                 margin-right: 16px;
+                &_count{
+                    font-size: 20px;
+                    color: black;
+                    font-family: var(--clash);
+                    margin: auto;
+                }
             }
         }
     }
