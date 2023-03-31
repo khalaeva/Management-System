@@ -11,7 +11,7 @@
             </div>
             <div class="product-price">
                 <p>{{ prod.price }} $</p>
-                <button type="button" class="btn btn-primary">В корзину</button>
+                <button type="button" class="btn btn-primary" @click="AddToCart()">В корзину</button>
             </div>
         </span>
     <!-- </router-link> -->
@@ -19,13 +19,15 @@
 </template>
 
 <script setup>
-import { ref } from "vue"
-
 const props = defineProps({
     products: {
         required: true
     }
-})
+});
+
+function AddToCart(){
+    this.$emit('create', this.products)
+}
 </script>
 
 <style lang="scss" scoped>
