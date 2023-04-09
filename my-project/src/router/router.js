@@ -3,8 +3,9 @@ import vLogin from '../components/v-login.vue'
 import vApp from '../components/v-app.vue';
 import vAnalysis from '@/components/menu/v-analysis.vue'
 import vProducts from '@/components/menu/v-products.vue'
-import vStorages from '@/components/menu/v-storages.vue'
+import vStorages from '@/components/menu/storages/v-storages.vue'
 import vTill from '@/components/menu/v-till.vue'
+import vStorageForm from '@/components/menu/storages/v-storage-form.vue'
 
 const router = createRouter({
     history: createWebHistory(), 
@@ -28,14 +29,19 @@ const router = createRouter({
                 },
                 {
                     path: 'storages',
-                    component: vStorages
+                    component: vStorages,
                 },
                 {
                     path: 'till',
                     component: vTill
+                },
+                {
+                    path: 'addStorage',
+                    component: vStorageForm
                 }
             ]
-        }
+        },
+        
     ]
 })
 
