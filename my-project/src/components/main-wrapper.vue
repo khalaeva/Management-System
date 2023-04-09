@@ -1,16 +1,12 @@
 <template>
     <div class="main-wrapper">
-        <vLayoutHeader/>
+        <router-view></router-view>
     </div>
 </template>
 
 <script>
-import vLayoutHeader from './layouts/v-layout-header.vue';
 export default {
     name: 'main-wrapper',
-    components: {
-        vLayoutHeader
-    }
 }
 </script>
 
