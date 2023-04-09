@@ -1,15 +1,10 @@
 <template>
-  <mainWrapper></mainWrapper>
+  <router-view></router-view>
 </template>
 
 <script>
-import mainWrapper from './components/main-wrapper.vue';
-
 export default {
-  name: 'App',
-  components: {
-    mainWrapper
-  }
+  name: 'App'
 }
 </script>
 

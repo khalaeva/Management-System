@@ -1,10 +1,10 @@
 <template>
     <div class="v-layout-header">
         <div class="v-layout-header-left">
-            <p>Анализ</p>
-            <p>Товары</p>
-            <p>Склады</p>
-            <p>Касса</p>
+            <RouterLink to="analysis"><p>Анализ</p></RouterLink>
+            <RouterLink to="products"><p>Товары</p></RouterLink>
+            <RouterLink to="storages"><p>Склады</p></RouterLink>
+            <RouterLink to="till"><p>Касса</p></RouterLink>
         </div>
         <div class="v-layout-header-right">
             <p>Настройки</p>

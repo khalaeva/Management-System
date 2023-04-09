@@ -11,7 +11,9 @@
               <label for="exampleInputPassword1">Password</label>
               <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
             </div>
-            <button type="submit" class="btn btn-primary" style="margin-bottom: 10px">Log In</button>
+            <RouterLink to="/app/analysis">
+                <button class="btn btn-primary" style="margin-bottom: 10px">Log In</button>
+            </RouterLink>
             <br>
         </form>
     </div>
