@@ -4,6 +4,26 @@
       "name": "halaevaanna@gmail.com",
       "password": "26062001",
       "id": 1
+    },
+    {
+      "name": "фы",
+      "password": "фы",
+      "id": 2
+    },
+    {
+      "name": "",
+      "password": "",
+      "id": 3
+    },
+    {
+      "name": "",
+      "password": "",
+      "id": 4
+    },
+    {
+      "name": "ыв",
+      "password": "",
+      "id": 5
     }
   ],
   "storages": [
@@ -17,19 +37,22 @@
     },
     {
       "name": "Склад 2",
-      "adress": "",
+      "adress": "Площадь Ленина",
       "commAdress": "",
       "comment": "",
-      "id": 2,
-      "index": "123321"
-    },
+      "id": "2",
+      "index": "123312"
+    }
+  ],
+  "products": [
     {
-      "name": "Еще один склад ",
-      "adress": "",
-      "commAdress": "",
-      "comment": "",
-      "id": "3",
-      "index": "123456"
+      "name": "Жилет ",
+      "description": "жилет с красными пуговицами ",
+      "unit": "шт",
+      "purchasePrice": "1200",
+      "id": "1",
+      "sellingPrice": "1500",
+      "storageId": "1"
     }
   ]
 }
