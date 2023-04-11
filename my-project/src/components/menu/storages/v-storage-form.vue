@@ -2,53 +2,59 @@
     <form class="row g-3 add-storage">
         <h4 class="user_login__i">Добавить склад</h4>
         <div class="col-md-6">
-          <label for="inputEmail4" class="form-label">Эл. адрес</label>
-          <input type="email" class="form-control" id="inputEmail4">
+          <label for="name" class="form-label">Наименование</label>
+          <input type="text" class="form-control" id="name" v-model="storage.name">
         </div>
         <div class="col-md-6">
-          <label for="inputPassword4" class="form-label">Пароль</label>
-          <input type="password" class="form-control" id="inputPassword4">
+          <label for="adress" class="form-label">Адрес</label>
+          <input type="text" class="form-control" id="adress" v-model="storage.adress">
         </div>
         <div class="col-12">
-          <label for="inputAddress" class="form-label">Адрес</label>
-          <input type="text" class="form-control" id="inputAddress" placeholder="Проспект Ленина">
+          <label for="commAdress" class="form-label">Комментарий к адресу</label>
+          <input type="text" class="form-control" id="commAdress" v-model="storage.commAdress">
         </div>
         <div class="col-12">
-          <label for="inputAddress2" class="form-label">Адрес 2</label>
-          <input type="text" class="form-control" id="inputAddress2" placeholder="Квартира">
+          <label for="comment" class="form-label">Комментарий</label>
+          <input type="text" class="form-control" id="comment" v-model="storage.comment">
         </div>
         <div class="col-md-6">
-          <label for="inputCity" class="form-label">Город</label>
-          <input type="text" class="form-control" id="inputCity" placeholder="Брянск">
+          <label for="id" class="form-label">Код</label>
+          <input type="text" class="form-control" id="id" v-model="storage.id">
         </div>
-        <div class="col-md-4">
-          <label for="inputState" class="form-label">Область</label>
-          <select id="inputState" class="form-select">
-            <option selected>Выберите...</option>
-            <option>...</option>
-          </select>
-        </div>
-        <div class="col-md-2">
-          <label for="inputZip" class="form-label">Индекс</label>
-          <input type="text" class="form-control" id="inputZip">
+        <div class="col-md-6">
+          <label for="index" class="form-label">Индекс</label>
+          <input type="text" class="form-control" id="index" v-model="storage.index">
         </div>
         <div class="col-12">
-          <div class="form-check">
-            <input class="form-check-input" type="checkbox" id="gridCheck">
-            <label class="form-check-label" for="gridCheck">
-              Проверить меня
-            </label>
-          </div>
-        </div>
-        <div class="col-12">
-          <button type="submit" class="btn btn-primary">Войти в систему</button>
+          <RouterLink to="storages">
+            <button @click="addStorage" class="btn btn-secondary">Сохранить</button>
+          </RouterLink>
         </div>
       </form>
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
     name: 'v-storage-from',
+    data() {
+      return {
+        storage: {
+          name: '',
+          adress: '',
+          commAdress: '',
+          comment: '', 
+          id: '', 
+          index: '',
+        }
+      }
+    },
+    methods: {
+      addStorage() {
+        axios.post('http://localhost:3000/storages', this.storage)
+      }
+    }
 }
 </script>
 

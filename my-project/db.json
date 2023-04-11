@@ -1,0 +1,35 @@
+{
+  "login": [
+    {
+      "name": "halaevaanna@gmail.com",
+      "password": "26062001",
+      "id": 1
+    }
+  ],
+  "storages": [
+    {
+      "name": "Основной склад",
+      "adress": " ",
+      "commAdress": " ",
+      "comment": " ",
+      "id": 1,
+      "index": ""
+    },
+    {
+      "name": "Склад 2",
+      "adress": "",
+      "commAdress": "",
+      "comment": "",
+      "id": 2,
+      "index": "123321"
+    },
+    {
+      "name": "Еще один склад ",
+      "adress": "",
+      "commAdress": "",
+      "comment": "",
+      "id": "3",
+      "index": "123456"
+    }
+  ]
+}
