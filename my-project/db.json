@@ -9,6 +9,11 @@
       "name": "",
       "password": "",
       "id": 2
+    },
+    {
+      "name": "",
+      "password": "",
+      "id": 3
     }
   ],
   "storages": [
@@ -37,5 +42,51 @@
       "index": ""
     }
   ],
-  "products": []
+  "products": [
+    {
+      "name": "Жилет",
+      "description": "",
+      "unit": "шт",
+      "purchasePrice": "1200",
+      "id": "1",
+      "sellingPrice": "1500",
+      "storageName": "Основной склад"
+    },
+    {
+      "name": "Платье",
+      "description": "",
+      "unit": "шт",
+      "purchasePrice": "1000",
+      "id": "2",
+      "sellingPrice": "1500",
+      "storageName": "Основной склад"
+    },
+    {
+      "name": "Шорты",
+      "description": "",
+      "unit": "шт",
+      "purchasePrice": "3000",
+      "id": "3",
+      "sellingPrice": "3500",
+      "storageName": "Основной склад"
+    },
+    {
+      "name": "Лонгслив",
+      "description": "",
+      "unit": "шт",
+      "purchasePrice": "2000",
+      "id": "4",
+      "sellingPrice": "3500",
+      "storageName": "Основной склад"
+    },
+    {
+      "name": "Блузка",
+      "description": "",
+      "unit": "шт",
+      "purchasePrice": "3000",
+      "id": "5",
+      "sellingPrice": "4500",
+      "storageName": "Основной склад"
+    }
+  ]
 }
