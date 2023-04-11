@@ -6,24 +6,9 @@
       "id": 1
     },
     {
-      "name": "фы",
-      "password": "фы",
+      "name": "",
+      "password": "",
       "id": 2
-    },
-    {
-      "name": "",
-      "password": "",
-      "id": 3
-    },
-    {
-      "name": "",
-      "password": "",
-      "id": 4
-    },
-    {
-      "name": "ыв",
-      "password": "",
-      "id": 5
     }
   ],
   "storages": [
@@ -42,17 +27,15 @@
       "comment": "",
       "id": "2",
       "index": "123312"
+    },
+    {
+      "name": "Еще один склад ",
+      "adress": "",
+      "commAdress": "",
+      "comment": "",
+      "id": "3",
+      "index": ""
     }
   ],
-  "products": [
-    {
-      "name": "Жилет ",
-      "description": "жилет с красными пуговицами ",
-      "unit": "шт",
-      "purchasePrice": "1200",
-      "id": "1",
-      "sellingPrice": "1500",
-      "storageId": "1"
-    }
-  ]
+  "products": []
 }

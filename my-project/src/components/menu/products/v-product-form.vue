@@ -27,11 +27,11 @@
         </div>
         <div class="col-md-6">
             <label for="storageId" class="form-label">Склад</label>
-            <select class="form-select" aria-label="Default select example" v-model="product.storageId">
+            <select class="form-select" aria-label="Default select example" v-model="product.storageName">
                 <option 
                     v-for="storage in STORAGES"
                     :key="storage.id"
-                    :value="storage.id"> {{ storage.name }} </option>
+                    :value="storage.name"> {{ storage.name }} </option>
             </select>
         </div>
         <div class="col-12">
@@ -57,7 +57,7 @@ export default {
           purchasePrice: '', 
           id: '', 
           sellingPrice: '',
-          storageId: '1',
+          storageName: 'Основной склад',
         }
       }
     },

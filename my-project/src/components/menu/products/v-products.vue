@@ -25,7 +25,7 @@
                     <td>{{ product.unit }}</td>
                     <td>{{ product.purchasePrice }}</td>
                     <td>{{ product.sellingPrice }}</td>
-                    <td>{{ product.storageId }}</td>
+                    <td>{{ product.storageName }}</td>
                   </tr>
                 </tbody>
             </table>
