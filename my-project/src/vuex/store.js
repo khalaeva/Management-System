@@ -4,15 +4,25 @@ import axios from 'axios';
 const store = createStore({
     state: {
         storages: [],
-        products: []
+        products: [],
+        cart: []
     },
 
     mutations: {
         SET_STORAGES_TO_STATE: (state, storages) => {
             state.storages = storages;
         },
+
         SET_PRODUCTS_TO_STATE: (state, products) => {
             state.products = products;
+        },
+
+        SET_CART: (state, prod) => {
+            state.cart.push(prod);
+            state.cart.forEach(function (product) {   //устанавливаем свойство "количество" элементам корзины
+                product.quantity = 1;
+              });
+        
         }
     },
 
@@ -41,6 +51,11 @@ const store = createStore({
                 return e;
             }
         },
+
+
+        ADD_TO_CART({commit}, prod) {
+            commit('SET_CART', prod);
+        },
     },
 
     getters: {
@@ -49,6 +64,9 @@ const store = createStore({
         },
         PRODUCTS(state) {
             return state.products;
+        },
+        CART(state) {
+            return state.cart;
         }
     }
 });

@@ -4,7 +4,7 @@
             <RouterLink to="analysis" class="link-secondary"><h5>Анализ</h5></RouterLink>
             <RouterLink to="products" class="link-secondary"><h5>Товары</h5></RouterLink>
             <RouterLink to="storages" class="link-secondary"><h5>Склады</h5></RouterLink>
-            <RouterLink to="till" class="link-secondary"><h5>Касса</h5></RouterLink>
+            <RouterLink to="till" class="link-secondary"><h5>Продажи</h5></RouterLink>
         </div>
         <div class="v-layout-header-right">
             <p>Настройки</p>

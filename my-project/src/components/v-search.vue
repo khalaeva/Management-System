@@ -1,17 +1,18 @@
 <template>
     <section class="dropdown-wrapper">
         <input 
+            @click="isVisible = true"
             v-model="searchQuery" 
             type="text" 
             placeholder="Найти товар..." 
             autocomplete="off"
             style="width: 90%"
             class="form-control">
-        <div v-if="searchQuery" class="options">
+        <div v-if="searchQuery && isVisible" class="options">
             <ul class="list-group" style="position: absolute; width: 40%">
                 <li 
                     class="list-group-item" 
-                    @click="selectItem(prod)"
+                    @click="selectItem(prod); showCart(); isVisible = false;"
                     v-for="(prod, index) in filteredList"
                     :key="index"
                     >{{ prod.name }}</li>
@@ -29,7 +30,7 @@ export default {
         return {
             searchQuery: '',
             selectedItem: null,
-            isVisible: false
+            isVisible: true,
         }
     },
     computed: {
@@ -54,7 +55,9 @@ export default {
         ]),
         selectItem(prod){
             this.selectedItem = prod;
-            this.isVisible = false
+        },
+        showCart() {
+            this.$emit('showCart', this.selectedItem)
         }
     },
     mounted() {
@@ -64,5 +67,10 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-    
+.list-group-item {
+    cursor: pointer;
+    &:hover {
+        background-color: lightgray;
+    }
+}
 </style>

@@ -2,40 +2,32 @@
     <div class="till-form">
         <div class="till-form-main">
             <div class="till-form-main__cart_product">
-                <h3 style="margin-bottom: 30px">Наименование</h3>
+                <h3 style="margin-bottom: 30px">{{ prodCart.name }}</h3>
                 <div class="till-form-main__cart_product_description">
                     <div class="till-form-main__cart_product_description_block">
-                        <p class="till-form-main__cart_product_description_block_text">Цена</p> 
+                        <p class="till-form-main__cart_product_description_block_text">{{ prodCart.sellingPrice }}</p> 
                         <span>Р</span>
                     </div>
                     <div class="till-form-main__cart_product_description_block">
                         <span><button class="btn btn-secondary btn-sm">-</button></span>
-                        <p class="till-form-main__cart_product_description_block_text">Количество</p>
+                        <p class="till-form-main__cart_product_description_block_text"> 1 </p>
                         <span><button class="btn btn-secondary btn-sm">+</button></span>
                     </div>
                     <div class="till-form-main__cart_product_description_block">
-                        <p class="till-form-main__cart_product_description_block_text">Скидка</p>
+                        <p class="till-form-main__cart_product_description_block_text">0</p>
                         <span>%</span>
                     </div>
+                    <button 
+                        class="btn btn-secondary btn-sm till-form-main__cart_product_description_block"
+                        @click="addToCart(prodCart)">В корзину</button>
                 </div>
             </div>
             <div class="till-form-main__search">
                 <label for="inputSearch" class="form-label">Найти товар:</label>
                 <div class="till-form-main__search_type">
-                    <!-- <input 
-                        type="text" 
-                        id="inputSearch" 
-                        class="form-control" 
-                        aria-describedby="inputHelpSearch" 
-                        style="width: 75%"
-                        v-model="searchProd"> -->
-                    <vSearch/>
-                    <!-- <div class="item fruit" v-for="(prod, index) in filteredList()" :key="index">
-                        <p>{{ prod }}</p>
-                    </div>
-                    <div class="item error" v-if="input&&!filteredList().length">
-                        <p>No results found!</p>
-                    </div> -->
+                    <vSearch
+                        @showCart="showCart"
+                    />
                     <button class="btn btn-secondary">Выбрать из каталога</button>
                 </div>
                 <div id="inputHelpSearch" class="form-text" style="margin-bottom: 20px">
@@ -53,12 +45,12 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                      </tr>
+                        <tr v-for="product in CART" :key="product.id">
+                            <th scope="row">{{ product.id }}</th>
+                            <td>{{ product.name }}</td>
+                            <td>{{ product.unit }}</td>
+                            <td>{{ product.sellingPrice }}</td>
+                          </tr>
                     </tbody>
                   </table>
             </div>
@@ -75,11 +67,36 @@
 
 <script>
 import vSearch from '@/components/v-search.vue';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
     name: 'v-till-form',
     components: {
         vSearch
+    },
+    data() {
+        return {
+            prodCart: {
+                name: 'Наименование',
+                sellingPrice: '0'
+            }
+        }
+    },
+    computed: {
+        ...mapGetters([
+            'CART'
+        ])
+    },
+    methods: {
+        ...mapActions([
+            'ADD_TO_CART'
+        ]),
+        showCart(prod) {
+            this.prodCart = prod
+        },
+        addToCart(prod) {
+            this.ADD_TO_CART(prod)
+        }
     }
 }
 </script>
