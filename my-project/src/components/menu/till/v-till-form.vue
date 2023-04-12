@@ -2,11 +2,44 @@
     <div class="till-form">
         <div class="till-form-main">
             <div class="till-form-main__cart_product">
-                <h3>Наименование</h3>
+                <h3 style="margin-bottom: 30px">Наименование</h3>
                 <div class="till-form-main__cart_product_description">
-                    <p>Цена</p>
-                    <p>Количество</p>
-                    <p>Скидка</p>
+                    <div class="till-form-main__cart_product_description_block">
+                        <p class="till-form-main__cart_product_description_block_text">Цена</p> 
+                        <span>Р</span>
+                    </div>
+                    <div class="till-form-main__cart_product_description_block">
+                        <span><button class="btn btn-secondary btn-sm">-</button></span>
+                        <p class="till-form-main__cart_product_description_block_text">Количество</p>
+                        <span><button class="btn btn-secondary btn-sm">+</button></span>
+                    </div>
+                    <div class="till-form-main__cart_product_description_block">
+                        <p class="till-form-main__cart_product_description_block_text">Скидка</p>
+                        <span>%</span>
+                    </div>
+                </div>
+            </div>
+            <div class="till-form-main__search">
+                <label for="inputSearch" class="form-label">Найти товар:</label>
+                <div class="till-form-main__search_type">
+                    <!-- <input 
+                        type="text" 
+                        id="inputSearch" 
+                        class="form-control" 
+                        aria-describedby="inputHelpSearch" 
+                        style="width: 75%"
+                        v-model="searchProd"> -->
+                    <vSearch/>
+                    <!-- <div class="item fruit" v-for="(prod, index) in filteredList()" :key="index">
+                        <p>{{ prod }}</p>
+                    </div>
+                    <div class="item error" v-if="input&&!filteredList().length">
+                        <p>No results found!</p>
+                    </div> -->
+                    <button class="btn btn-secondary">Выбрать из каталога</button>
+                </div>
+                <div id="inputHelpSearch" class="form-text" style="margin-bottom: 20px">
+                    Введите название продукта.
                 </div>
             </div>
             <div class="till-form-main__table_products">
@@ -41,8 +74,13 @@
 </template>
 
 <script>
+import vSearch from '@/components/v-search.vue';
+
 export default {
-    name: 'v-till-form'
+    name: 'v-till-form',
+    components: {
+        vSearch
+    }
 }
 </script>
 
@@ -54,6 +92,12 @@ export default {
     justify-content: space-between;
     &-main {
         width: 70%;
+        &__search_type {
+            display: grid;
+            grid-template-columns: 3fr 1fr;
+            justify-content: space-between;
+            align-items: center;
+        }
         &__cart_product {
             margin-bottom: 30px;
             padding: 10px;
@@ -62,6 +106,16 @@ export default {
                 display: flex;
                 justify-content: space-between;
                 width: 50%;
+                &_block {
+                    display: flex; 
+                    justify-content: center; 
+                    align-items: center;
+                    &_text {
+                        border: 1px solid lightgray; 
+                        padding: 0 10px 0 10px;
+                        margin: 0 10px 0 10px;
+                    }
+                }
             }
         }
     }
