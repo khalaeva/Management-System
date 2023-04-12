@@ -17,12 +17,27 @@ const store = createStore({
             state.products = products;
         },
 
-        SET_CART: (state, prod) => {
-            state.cart.push(prod);
-            state.cart.forEach(function (product) {   //устанавливаем свойство "количество" элементам корзины
-                product.quantity = 1;
-              });
-        
+        SET_CART: (state, product) => {
+            if (state.cart.length) {
+                let isProdExist = false;
+                state.cart.map(function(item) {
+                    if (item.id === product.id) {
+                        isProdExist = true;
+                        item.quantity++;
+                    }
+                })
+                if (!isProdExist) {
+                    state.cart.push(product);
+                    state.cart.forEach(function (product) {   //устанавливаем свойство "количество" элементам корзины
+                        product.quantity = 1;
+                      });
+                }
+            } else {
+                state.cart.push(product);
+                state.cart.forEach(function (product) {
+                    product.quantity = 1;
+                  });
+            }
         }
     },
 

@@ -48,7 +48,7 @@
                         <tr v-for="product in CART" :key="product.id">
                             <th scope="row">{{ product.id }}</th>
                             <td>{{ product.name }}</td>
-                            <td>{{ product.unit }}</td>
+                            <td>{{ product.quantity }} {{ product.unit }}</td>
                             <td>{{ product.sellingPrice }}</td>
                           </tr>
                     </tbody>
