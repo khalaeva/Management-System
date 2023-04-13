@@ -9,12 +9,15 @@
                         <span>Р</span>
                     </div>
                     <div class="till-form-main__cart_product_description_block">
-                        <span><button class="btn btn-secondary btn-sm" @click="prodCart.quan-- ">-</button></span>
-                        <p class="till-form-main__cart_product_description_block_text"> {{ prodCart.quan }} </p>
-                        <span><button class="btn btn-secondary btn-sm" @click="prodCart.quan++">+</button></span>
+                        <span><button class="btn btn-secondary btn-sm" @click="prodCart.quantity-- ">-</button></span>
+                        <p class="till-form-main__cart_product_description_block_text"> {{ prodCart.quantity }} </p>
+                        <span><button class="btn btn-secondary btn-sm" @click="prodCart.quantity++">+</button></span>
                     </div>
                     <div class="till-form-main__cart_product_description_block">
-                        <p class="till-form-main__cart_product_description_block_text">0</p>
+                        <input 
+                            class="till-form-main__cart_product_description_block_text"
+                            style="width: 50px;"
+                            v-model="prodCart.sale">
                         <span>%</span>
                     </div>
                     <button 
@@ -45,23 +48,42 @@
                         <th scope="col">Сумма</th>
                       </tr>
                     </thead>
-                    <tbody>
-                        <tr v-for="product in CART" :key="product.id">
-                            <th scope="row">{{ product.id }}</th>
-                            <td>{{ product.name }}</td>
-                            <td>{{ product.quantity }} {{ product.unit }}</td>
-                            <td>{{ product.sellingPrice * product.quantity}} Р</td>
-                          </tr>
+                    <tbody >
+                        <tr 
+                            @click="showCart(product)" 
+                            v-for="product in CART" 
+                            :key="product.id"
+                            class="table-tr">
+                                <th scope="row">{{ product.id }}</th>
+                                <td>{{ product.name }}</td>
+                                <td>{{ product.quantity }} {{ product.unit }}</td>
+                                <td>{{ product.sale}} %</td>
+                                <td>{{ product.priceSale }} Р</td>
+                        </tr>
                     </tbody>
                   </table>
             </div>
         </div>
         <div class="till-form-check">
-            <p>Цена без скидки {{ sum }}</p>
-            <p>Скидка</p>
-            <p>Итого</p>
-            <p>Карта/Наличные</p>
-            <button class="btn btn-secondary">Сохранить</button>
+            <p>Цена без скидки: {{ preSum }} Р</p>
+            <p>Скидка: {{ totalSale }} Р</p>
+            <p>Итого: {{ totalSum }} Р</p>
+            <div class="type" style="margin-bottom: 20px">
+                <p style="margin-bottom: 10px;">Способ оплаты:</p>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" v-model="payment" value="card" id="flexCheckDefault" checked>
+                    <label class="form-check-label" for="flexCheckDefault">
+                      Карта
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" v-model="payment" value="cash" id="flexCheckChecked">
+                    <label class="form-check-label" for="flexCheckChecked">
+                      Наличные
+                    </label>
+                </div>
+            </div>
+            <button @click="addOrder" class="btn btn-secondary">Сохранить</button>
         </div>
     </div>
 </template>
@@ -69,6 +91,7 @@
 <script>
 import vSearch from '@/components/v-search.vue';
 import { mapActions, mapGetters } from 'vuex';
+import axios from 'axios';
 
 export default {
     name: 'v-till-form',
@@ -80,9 +103,12 @@ export default {
             prodCart: {
                 name: 'Наименование',
                 sellingPrice: '0',
-                quan: 1,
+                quantity: 1
             },
-            sum: 0
+            payment: ['card'],
+            preSum: 0,
+            totalSum: 0,
+            totalSale: 0,
         }
     },
     computed: {
@@ -96,12 +122,21 @@ export default {
         ]),
         showCart(prod) {
             this.prodCart = prod;
-            this.prodCart.quan = 1
+            if (!this.prodCart.quantity) {this.prodCart.quantity = 1}
+            if (!this.prodCart.sale) {
+                this.prodCart.sale = 0;
+            }
         },
         addToCart(prod) {
-            this.sum += prod.quan * prod.sellingPrice;
+            console.log(this.prodCart.quantity)
+            prod.priceSale = (prod.sellingPrice * prod.quantity) * (1 - prod.sale / 100); // Считаем сумму со скидкой каждого товара
+            this.preSum += prod.quantity * prod.sellingPrice; // Цена без скидки
+            this.totalSale += prod.sellingPrice * prod.quantity - prod.priceSale; // Итоговая скидка
+            this.totalSum = this.preSum - this.totalSale; // Итоговая сумма
             this.ADD_TO_CART(prod);
-            
+        },
+        addOrder(){
+            axios.post('http://localhost:3000/orders', this.CART)
         }
     },
 
@@ -145,6 +180,12 @@ export default {
     }
     &-check {
         width: 20%;
+    }
+}
+
+.table-tr {
+    &:hover {
+        background-color: lightgray;
     }
 }
 </style>
