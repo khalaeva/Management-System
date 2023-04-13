@@ -9,9 +9,9 @@
                         <span>Р</span>
                     </div>
                     <div class="till-form-main__cart_product_description_block">
-                        <span><button class="btn btn-secondary btn-sm">-</button></span>
-                        <p class="till-form-main__cart_product_description_block_text"> 1 </p>
-                        <span><button class="btn btn-secondary btn-sm">+</button></span>
+                        <span><button class="btn btn-secondary btn-sm" @click="prodCart.quan-- ">-</button></span>
+                        <p class="till-form-main__cart_product_description_block_text"> {{ prodCart.quan }} </p>
+                        <span><button class="btn btn-secondary btn-sm" @click="prodCart.quan++">+</button></span>
                     </div>
                     <div class="till-form-main__cart_product_description_block">
                         <p class="till-form-main__cart_product_description_block_text">0</p>
@@ -41,6 +41,7 @@
                         <th scope="col">Код</th>
                         <th scope="col">Наименование</th>
                         <th scope="col">Количество</th>
+                        <th scope="col">Скидка</th>
                         <th scope="col">Сумма</th>
                       </tr>
                     </thead>
@@ -49,14 +50,14 @@
                             <th scope="row">{{ product.id }}</th>
                             <td>{{ product.name }}</td>
                             <td>{{ product.quantity }} {{ product.unit }}</td>
-                            <td>{{ product.sellingPrice }}</td>
+                            <td>{{ product.sellingPrice * product.quantity}} Р</td>
                           </tr>
                     </tbody>
                   </table>
             </div>
         </div>
         <div class="till-form-check">
-            <p>Цена без скидки</p>
+            <p>Цена без скидки {{ sum }}</p>
             <p>Скидка</p>
             <p>Итого</p>
             <p>Карта/Наличные</p>
@@ -78,8 +79,10 @@ export default {
         return {
             prodCart: {
                 name: 'Наименование',
-                sellingPrice: '0'
-            }
+                sellingPrice: '0',
+                quan: 1,
+            },
+            sum: 0
         }
     },
     computed: {
@@ -92,12 +95,16 @@ export default {
             'ADD_TO_CART'
         ]),
         showCart(prod) {
-            this.prodCart = prod
+            this.prodCart = prod;
+            this.prodCart.quan = 1
         },
         addToCart(prod) {
-            this.ADD_TO_CART(prod)
+            this.sum += prod.quan * prod.sellingPrice;
+            this.ADD_TO_CART(prod);
+            
         }
-    }
+    },
+
 }
 </script>
 

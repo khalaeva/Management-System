@@ -19,6 +19,21 @@
       "name": "",
       "password": "",
       "id": 4
+    },
+    {
+      "name": "",
+      "password": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "password": "",
+      "id": 6
+    },
+    {
+      "name": "",
+      "password": "",
+      "id": 7
     }
   ],
   "storages": [
@@ -44,6 +59,14 @@
       "commAdress": "",
       "comment": "",
       "id": "3",
+      "index": ""
+    },
+    {
+      "name": "блпа",
+      "adress": "",
+      "commAdress": "",
+      "comment": "",
+      "id": "12",
       "index": ""
     }
   ],
@@ -92,6 +115,15 @@
       "id": "5",
       "sellingPrice": "4500",
       "storageName": "Основной склад"
+    },
+    {
+      "name": "ва",
+      "description": "пар",
+      "unit": "шт",
+      "purchasePrice": "12",
+      "id": "12",
+      "sellingPrice": "1",
+      "storageName": "Еще один склад "
     }
   ]
 }

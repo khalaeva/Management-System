@@ -23,19 +23,19 @@ const store = createStore({
                 state.cart.map(function(item) {
                     if (item.id === product.id) {
                         isProdExist = true;
-                        item.quantity++;
+                        item.quantity += product.quan;
                     }
                 })
                 if (!isProdExist) {
                     state.cart.push(product);
                     state.cart.forEach(function (product) {   //устанавливаем свойство "количество" элементам корзины
-                        product.quantity = 1;
+                        product.quantity = product.quan;
                       });
                 }
             } else {
                 state.cart.push(product);
                 state.cart.forEach(function (product) {
-                    product.quantity = 1;
+                    product.quantity = product.quan;
                   });
             }
         }
@@ -69,7 +69,7 @@ const store = createStore({
 
 
         ADD_TO_CART({commit}, prod) {
-            commit('SET_CART', prod);
+            commit('SET_CART',  prod);
         },
     },
 

@@ -8,7 +8,7 @@
             autocomplete="off"
             style="width: 90%"
             class="form-control">
-        <div v-if="searchQuery && isVisible" class="options">
+        <div v-if="isVisible" class="options">
             <ul class="list-group" style="position: absolute; width: 40%">
                 <li 
                     class="list-group-item" 
@@ -30,7 +30,7 @@ export default {
         return {
             searchQuery: '',
             selectedItem: null,
-            isVisible: true,
+            isVisible: false,
         }
     },
     computed: {
