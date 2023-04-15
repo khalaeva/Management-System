@@ -29,21 +29,6 @@
       "name": "",
       "password": "",
       "id": 6
-    },
-    {
-      "name": "",
-      "password": "",
-      "id": 7
-    },
-    {
-      "name": "",
-      "password": "",
-      "id": 8
-    },
-    {
-      "name": "",
-      "password": "",
-      "id": 9
     }
   ],
   "storages": [
@@ -137,43 +122,73 @@
     }
   ],
   "orders": [
-    [
-      {
-        "name": "Жилет",
-        "description": "",
-        "unit": "шт",
-        "purchasePrice": "1200",
-        "id": "1",
-        "sellingPrice": "1500",
-        "storageName": "Основной склад",
-        "quantity": 3,
-        "sale": 0,
-        "priceSale": 4500
+    {
+      "cart": [
+        {
+          "name": "Платье",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1000",
+          "id": "2",
+          "sellingPrice": "1500",
+          "storageName": "Основной склад",
+          "quantity": 3,
+          "sale": "10",
+          "priceSale": 4050
+        },
+        {
+          "name": "Лонгслив",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "2000",
+          "id": "4",
+          "sellingPrice": "3500",
+          "storageName": "Основной склад",
+          "quantity": 1,
+          "sale": "15",
+          "priceSale": 2975
+        },
+        {
+          "name": "Жилет",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1200",
+          "id": "1",
+          "sellingPrice": "1500",
+          "storageName": "Основной склад",
+          "quantity": 3,
+          "sale": 0,
+          "priceSale": 4500
+        }
+      ],
+      "buyer": {
+        "id": 1,
+        "name": "Неизвестный",
+        "lastName": "Покупатель",
+        "phone": "",
+        "email": ""
       },
-      {
-        "name": "Шорты",
-        "description": "",
-        "unit": "шт",
-        "purchasePrice": "3000",
-        "id": "3",
-        "sellingPrice": "3500",
-        "storageName": "Основной склад",
-        "quantity": 1,
-        "sale": 0,
-        "priceSale": 3500
-      },
-      {
-        "name": "Лонгслив",
-        "description": "",
-        "unit": "шт",
-        "purchasePrice": "2000",
-        "id": "4",
-        "sellingPrice": "3500",
-        "storageName": "Основной склад",
-        "quantity": 1,
-        "sale": "10",
-        "priceSale": 3150
-      }
-    ]
+      "preSum": 12500,
+      "totalSum": 11525,
+      "totalSale": 975,
+      "data": "2023-04-15T18:00:21.201Z",
+      "id": 1
+    }
+  ],
+  "buyers": [
+    {
+      "id": 1,
+      "name": "Неизвестный",
+      "lastName": "Покупатель",
+      "phone": "",
+      "email": ""
+    },
+    {
+      "id": 2,
+      "name": "Anna",
+      "lastName": "Khalaeva",
+      "phone": "+79823672376",
+      "email": "halaevaanna@asd.sd"
+    }
   ]
 }

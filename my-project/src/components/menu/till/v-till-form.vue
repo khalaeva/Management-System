@@ -1,4 +1,7 @@
 <template>
+    <div class="storageName" style="width: 90%; margin: auto;">
+        <h1>{{ this.$route.params.storageName }}</h1>
+    </div>
     <div class="till-form">
         <div class="till-form-main">
             <div class="till-form-main__cart_product">
@@ -83,13 +86,21 @@
                     </label>
                 </div>
             </div>
+            <div style="margin-bottom: 15px">
+                <select class="form-select" aria-label="Default select example" v-model="buyer">
+                    <option 
+                        v-for="buyer in BUYERS"
+                        :key="buyer.id"
+                        :value="buyer"> {{ buyer.name }} {{ buyer.lastName }} </option>
+                </select>
+            </div>
             <button @click="addOrder" class="btn btn-secondary">Сохранить</button>
         </div>
     </div>
 </template>
 
 <script>
-import vSearch from '@/components/v-search.vue';
+import vSearch from '@/components/v-search-prod.vue';
 import { mapActions, mapGetters } from 'vuex';
 import axios from 'axios';
 
@@ -100,6 +111,13 @@ export default {
     },
     data() {
         return {
+            buyer: {
+                id: 1,
+                name: "Неизвестный",
+                lastName: "Покупатель",
+                phone: "",
+                email: ""
+            },
             prodCart: {
                 name: 'Наименование',
                 sellingPrice: '0',
@@ -113,12 +131,14 @@ export default {
     },
     computed: {
         ...mapGetters([
-            'CART'
+            'CART',
+            'BUYERS'
         ])
     },
     methods: {
         ...mapActions([
-            'ADD_TO_CART'
+            'ADD_TO_CART',
+            'GET_BUYERS_FROM_API'
         ]),
         showCart(prod) {
             this.prodCart = prod;
@@ -136,10 +156,22 @@ export default {
             this.ADD_TO_CART(prod);
         },
         addOrder(){
-            axios.post('http://localhost:3000/orders', this.CART)
+            let order = {
+                cart: this.CART,
+                buyer: this.buyer,
+                preSum: this.preSum,
+                totalSum: this.totalSum,
+                totalSale: this.totalSale,
+                data: new Date(),
+            }
+            axios.post('http://localhost:3000/orders', order);
+            console.log(order);
+            document.location.reload();
         }
     },
-
+    mounted() {
+        this.GET_BUYERS_FROM_API()
+    }
 }
 </script>
 

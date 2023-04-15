@@ -5,18 +5,25 @@ const store = createStore({
     state: {
         storages: [],
         products: [],
-        cart: []
+        cart: [],
+        buyers: [],
+        orders: [],
     },
 
     mutations: {
         SET_STORAGES_TO_STATE: (state, storages) => {
             state.storages = storages;
         },
-
         SET_PRODUCTS_TO_STATE: (state, products) => {
             state.products = products;
         },
-
+        SET_BUYERS_TO_STATE: (state, buyers) => {
+            state.buyers = buyers;
+        },
+        SET_ORDERS_TO_STATE: (state, orders) => {
+            state.orders = orders;
+        },
+        
         SET_CART: (state, product) => {
             if (state.cart.length) {
                 let isProdExist = false;
@@ -59,7 +66,30 @@ const store = createStore({
                 return e;
             }
         },
-
+        async GET_BUYERS_FROM_API({commit}) {
+            try {
+                const buyers = await axios('http://localhost:3000/buyers', {
+                    method: "GET"
+                });
+                commit('SET_BUYERS_TO_STATE', buyers.data);
+                return buyers;
+            } catch (e) {
+                console.log(e);
+                return e;
+            }
+        },
+        async GET_ORDERS_FROM_API({commit}) {
+            try {
+                const orders = await axios('http://localhost:3000/orders', {
+                    method: "GET"
+                });
+                commit('SET_ORDERS_TO_STATE', orders.data);
+                return orders;
+            } catch (e) {
+                console.log(e);
+                return e;
+            }
+        },
 
         ADD_TO_CART({commit}, prod) {
             commit('SET_CART',  prod);
@@ -75,6 +105,12 @@ const store = createStore({
         },
         CART(state) {
             return state.cart;
+        },
+        BUYERS(state) {
+            return state.buyers;
+        },
+        ORDERS(state) {
+            return state.orders;
         }
     }
 });

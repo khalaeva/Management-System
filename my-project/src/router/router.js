@@ -8,6 +8,8 @@ import vTill from '@/components/menu/till/v-till.vue'
 import vStorageForm from '@/components/menu/storages/v-storage-form.vue'
 import vProductForm from '@/components/menu/products/v-product-form.vue'
 import vTillForm from '@/components/menu/till/v-till-form.vue'
+import vBuyers from "@/components/menu/buyers/v-buyers.vue"
+import vBuyersForm from "@/components/menu/buyers/v-buyers-form.vue"
 
 const router = createRouter({
     history: createWebHistory(), 
@@ -46,8 +48,16 @@ const router = createRouter({
                     component: vProductForm
                 },
                 {
-                    path: 'addTill',
+                    path: ':storageName',
                     component: vTillForm
+                },
+                {
+                    path: 'buyers',
+                    component: vBuyers
+                },
+                {
+                    path: 'addBuyers',
+                    component: vBuyersForm
                 }
             ]
         },

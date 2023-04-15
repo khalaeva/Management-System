@@ -2,7 +2,18 @@
     <div class="v-till">
         <div class="v-till-add">
             <h3 class="v-till-add__text">Заказы</h3>
-            <RouterLink to="addTill" class="v-till-add__link"><button type="button" class="btn btn-secondary">Открыть кассу</button></RouterLink>    
+            <div style="margin-top: 20px" class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                  Открыть кассу
+                </button>
+                <ul 
+                    class="dropdown-menu" 
+                    aria-labelledby="dropdownMenuButton1"
+                    >
+                  <li v-for="(store, index) in STORAGES" :key="index"><RouterLink :to="store.name" class="dropdown-item" href="#">{{ store.name }}</RouterLink></li>
+                </ul>
+            </div>
+            <!-- <RouterLink to="addTill" class="v-till-add__link"><button type="button" class="btn btn-secondary">Открыть кассу</button></RouterLink>     -->
         </div>
         <table class="table">
             <thead>
@@ -14,20 +25,40 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>@mdo</td>
+              <tr v-for="order in ORDERS" :key="order.id">
+                <th scope="row">{{ order.id }}</th>
+                <td>{{ order.data }}</td>
+                <td>{{ order.buyer.name }} {{ order.buyer.lastName }}</td>
+                <td>{{ order.totalSum }} </td>
               </tr>
             </tbody>
         </table>
+        <!-- <div>{{ BUYERS[0].name }}</div> -->
     </div>
 </template>
 
 <script>
+import { mapActions, mapGetters } from 'vuex';
+
 export default {
-    name: 'v-till'
+    name: 'v-till',
+    computed: {
+        ...mapGetters([
+            'STORAGES',
+            'ORDERS',
+            'BUYERS'
+        ])
+    },
+    methods: {
+        ...mapActions([
+            'GET_ORDERS_FROM_API',
+            'GET_BUYERS_FROM_API'
+        ]),
+    },
+    mounted() {
+        this.GET_ORDERS_FROM_API()
+        this.GET_BUYERS_FROM_API()
+    }
 }
 </script>
 
