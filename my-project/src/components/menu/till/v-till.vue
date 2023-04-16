@@ -15,7 +15,9 @@
             </div>
             <!-- <RouterLink to="addTill" class="v-till-add__link"><button type="button" class="btn btn-secondary">Открыть кассу</button></RouterLink>     -->
         </div>
-        <table class="table">
+        <vTillTables v-for="store in STORAGES" :key="store.id"
+        :storeName="store.name"/>
+        <!-- <table class="table">
             <thead>
               <tr>
                 <th scope="col">№</th>
@@ -32,32 +34,36 @@
                 <td>{{ order.totalSum }} </td>
               </tr>
             </tbody>
-        </table>
+        </table> -->
         <!-- <div>{{ BUYERS[0].name }}</div> -->
     </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
+import vTillTables from './v-till-tables.vue';
 
 export default {
     name: 'v-till',
+    components: {
+        vTillTables
+    },
     computed: {
         ...mapGetters([
             'STORAGES',
             'ORDERS',
-            'BUYERS'
+            //'BUYERS'
         ])
     },
     methods: {
         ...mapActions([
             'GET_ORDERS_FROM_API',
-            'GET_BUYERS_FROM_API'
+            //'GET_BUYERS_FROM_API'
         ]),
     },
     mounted() {
         this.GET_ORDERS_FROM_API()
-        this.GET_BUYERS_FROM_API()
+        //this.GET_BUYERS_FROM_API()
     }
 }
 </script>

@@ -13,19 +13,19 @@
           <label for="desc" class="form-label">Описание</label>
           <input type="text" class="form-control" id="desc" v-model="product.description">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
           <label for="purchPr" class="form-label">Закупочная цена</label>
           <input type="text" class="form-control" id="purchPr" v-model="product.purchasePrice">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
           <label for="sellPr" class="form-label">Цена продажи</label>
           <input type="text" class="form-control" id="sellPr" v-model="product.sellingPrice">
         </div>
-        <div class="col-md-6">
+        <div class="col-md-4">
             <label for="id" class="form-label">Код товара</label>
             <input type="text" class="form-control" id="id" v-model="product.id">
         </div>
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
             <label for="storageId" class="form-label">Склад</label>
             <select class="form-select" aria-label="Default select example" v-model="product.storageName">
                 <option 
@@ -33,7 +33,7 @@
                     :key="storage.id"
                     :value="storage.name"> {{ storage.name }} </option>
             </select>
-        </div>
+        </div> -->
         <div class="col-12">
           <RouterLink to="products">
             <button @click="addProduct" class="btn btn-secondary">Сохранить</button>

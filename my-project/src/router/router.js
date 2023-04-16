@@ -10,6 +10,8 @@ import vProductForm from '@/components/menu/products/v-product-form.vue'
 import vTillForm from '@/components/menu/till/v-till-form.vue'
 import vBuyers from "@/components/menu/buyers/v-buyers.vue"
 import vBuyersForm from "@/components/menu/buyers/v-buyers-form.vue"
+import vProductsPosting from "@/components/menu/products/v-products-posting.vue"
+import vProductsPostingForm from "@/components/menu/products/v-product-posting-form.vue";
 
 const router = createRouter({
     history: createWebHistory(), 
@@ -29,7 +31,16 @@ const router = createRouter({
                 },
                 {
                     path: 'products',
-                    component: vProducts
+                    component: vProducts,
+
+                },
+                {
+                    path: 'addProduct',
+                    component: vProductForm
+                },
+                {
+                    path: 'productPosting',
+                    component: vProductsPosting,
                 },
                 {
                     path: 'storages',
@@ -44,10 +55,6 @@ const router = createRouter({
                     component: vStorageForm
                 },
                 {
-                    path: 'addProduct',
-                    component: vProductForm
-                },
-                {
                     path: ':storageName',
                     component: vTillForm
                 },
@@ -58,6 +65,10 @@ const router = createRouter({
                 {
                     path: 'addBuyers',
                     component: vBuyersForm
+                },
+                {
+                    path: 'productPosting/:postingToStorage',
+                    component: vProductsPostingForm
                 }
             ]
         },

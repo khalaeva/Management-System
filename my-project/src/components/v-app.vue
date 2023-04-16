@@ -1,6 +1,6 @@
 <template>
     <vLayoutHeader/>
-    <RouterView/>
+    <!-- <RouterView/> -->
 </template>
 
 <script>

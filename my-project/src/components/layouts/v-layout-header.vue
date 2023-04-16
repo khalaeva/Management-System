@@ -13,6 +13,7 @@
             <!-- <p>{{ LOGIN[0].name }}</p> -->
         </div>
     </div>
+    <RouterView/>
 </template>
 
 <script>

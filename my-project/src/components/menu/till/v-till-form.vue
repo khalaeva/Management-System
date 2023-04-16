@@ -163,6 +163,7 @@ export default {
                 totalSum: this.totalSum,
                 totalSale: this.totalSale,
                 data: new Date(),
+                storageName: this.$route.params.storageName
             }
             axios.post('http://localhost:3000/orders', order);
             console.log(order);

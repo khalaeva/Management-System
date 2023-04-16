@@ -3,6 +3,7 @@
         <div class="v-products-add">
             <h3 class="v-products-add__text">Товары</h3>
             <RouterLink to="addProduct" class="v-products-add__link"><button type="button" class="btn btn-secondary">Добавить товар</button></RouterLink>    
+            <RouterLink to="productPosting" class="v-products-add__link"><button type="button" class="btn btn-secondary">Оприходование</button></RouterLink>    
         </div>
         <div class="v-products_table">
             <table class="table table-bordered table-hover">
@@ -31,6 +32,7 @@
             </table>
         </div>
     </div>
+    <RouterView/>
 </template>
 
 <script>
