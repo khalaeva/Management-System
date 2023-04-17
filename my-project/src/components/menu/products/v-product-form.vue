@@ -25,21 +25,13 @@
             <label for="id" class="form-label">Код товара</label>
             <input type="text" class="form-control" id="id" v-model="product.id">
         </div>
-        <!-- <div class="col-md-6">
-            <label for="storageId" class="form-label">Склад</label>
-            <select class="form-select" aria-label="Default select example" v-model="product.storageName">
-                <option 
-                    v-for="storage in STORAGES"
-                    :key="storage.id"
-                    :value="storage.name"> {{ storage.name }} </option>
-            </select>
-        </div> -->
         <div class="col-12">
           <RouterLink to="products">
             <button @click="addProduct" class="btn btn-secondary">Сохранить</button>
           </RouterLink>
         </div>
       </form>
+      <RouterView></RouterView>
 </template>
 
 <script>

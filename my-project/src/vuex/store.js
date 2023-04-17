@@ -8,6 +8,7 @@ const store = createStore({
         cart: [],
         buyers: [],
         orders: [],
+        posts: []
     },
 
     mutations: {
@@ -22,6 +23,9 @@ const store = createStore({
         },
         SET_ORDERS_TO_STATE: (state, orders) => {
             state.orders = orders;
+        },
+        SET_POSTS_TO_STATE: (state, posts) => {
+            state.posts = posts;
         },
         
         SET_CART: (state, product) => {
@@ -90,6 +94,18 @@ const store = createStore({
                 return e;
             }
         },
+        async GET_POSTS_FROM_API({commit}) {
+            try {
+                const posts = await axios('http://localhost:3000/posts', {
+                    method: "GET"
+                });
+                commit('SET_POSTS_TO_STATE', posts.data);
+                return posts;
+            } catch (e) {
+                console.log(e);
+                return e;
+            }
+        },
 
         ADD_TO_CART({commit}, prod) {
             commit('SET_CART',  prod);
@@ -111,6 +127,9 @@ const store = createStore({
         },
         ORDERS(state) {
             return state.orders;
+        },
+        POSTS(state) {
+            return state.posts;
         }
     }
 });

@@ -18,24 +18,6 @@
       </tr>
     </tbody>
 </table>
-<!-- <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">№</th>
-        <th scope="col">Время</th>
-        <th scope="col">Покупатель</th>
-        <th scope="col">Сумма</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr v-for="order in data_table" :key="order.id">
-        <th scope="row">{{ order.id }}</th>
-        <td>{{ order.data }}</td>
-        <td>{{ order.buyer.name }} {{ order.buyer.lastName }}</td>
-        <td>{{ order.totalSum }} </td>
-      </tr>
-    </tbody>
-</table> -->
 </template>
 
 <script>

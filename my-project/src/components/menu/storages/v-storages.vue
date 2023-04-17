@@ -32,7 +32,7 @@
 </template>
 
 <script>
-import { mapGetters } from 'vuex';
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
     name: 'v-storages',
@@ -40,6 +40,14 @@ export default {
         ...mapGetters([
             'STORAGES'
         ])
+    },
+    methods: {
+        ...mapActions([
+            'GET_STORAGES_FROM_API'
+        ])
+    },
+    mounted() {
+        this.GET_STORAGES_FROM_API()
     }
 }
 </script>

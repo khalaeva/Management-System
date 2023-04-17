@@ -10,10 +10,9 @@
                     class="dropdown-menu" 
                     aria-labelledby="dropdownMenuButton1"
                     >
-                  <li v-for="(store, index) in STORAGES" :key="index"><RouterLink :to="store.name" class="dropdown-item" append>{{ store.name }}</RouterLink></li>
+                  <li v-for="(store, index) in STORAGES" :key="index"><RouterLink :to="{name: 'PostingForm', params: { productPosting: store.name }}" class="dropdown-item">{{ store.name }}</RouterLink></li>
                 </ul>
             </div>
-            <!-- <RouterLink to="productPostingForm" class="v-products-add__link"><button type="button" class="btn btn-secondary">Создать</button></RouterLink>     -->
         </div>
         <div class="v-products_table">
             <table class="table table-bordered table-hover">
@@ -26,15 +25,13 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <!-- <tr v-for="product in PRODUCTS" :key="product.id">
-                    <th scope="row">{{ product.id }}</th>
-                    <td>{{ product.name }}</td>
-                    <td>{{ product.description }}</td>
-                    <td>{{ product.unit }}</td>
-                    <td>{{ product.purchasePrice }}</td>
-                    <td>{{ product.sellingPrice }}</td>
-                    <td>{{ product.storageName }}</td>
-                  </tr> -->
+                    <tr v-for="post in POSTS" :key="post.id">
+                        <th scope="row">{{ post.id }}</th>
+                        <td>{{ post.data }}</td>
+                        <td>{{ post.storageName }}</td>
+                        <td>{{ post.totalSum }}</td>
+                        <!-- <td>{{ product.unit }}</td> -->
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -48,16 +45,19 @@ export default {
     name: 'v-products-posting',
     methods: {
         ...mapActions([
-            'GET_STORAGES_FROM_API'
+            'GET_STORAGES_FROM_API',
+            'GET_POSTS_FROM_API'
         ])
     },
     computed: {
         ...mapGetters([
-            'STORAGES'
+            'STORAGES',
+            'POSTS'
         ])
     },
     mounted() {
-        this.GET_STORAGES_FROM_API()
+        this.GET_STORAGES_FROM_API();
+        this.GET_POSTS_FROM_API()
     }
 }
 </script>

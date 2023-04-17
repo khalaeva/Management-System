@@ -22,7 +22,7 @@
                 placeholder="Password"
                 v-model="login.password">
             </div>
-            <RouterLink to="/app/analysis">
+            <RouterLink to="/analysis">
                 <button @click="addLogin" class="btn btn-primary" style="margin-bottom: 10px">Log In</button>
             </RouterLink>
             <br>

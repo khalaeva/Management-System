@@ -1,6 +1,6 @@
 import { createRouter, createWebHistory} from "vue-router";
 import vLogin from '../components/v-login.vue'
-import vApp from '../components/v-app.vue';
+//import vApp from '../components/v-app.vue';
 import vAnalysis from '@/components/menu/analysis/v-analysis.vue'
 import vProducts from '@/components/menu/products/v-products.vue'
 import vStorages from '@/components/menu/storages/v-storages.vue'
@@ -22,57 +22,56 @@ const router = createRouter({
             component: vLogin,
         },
         {
-            path: '/app',
-            component: vApp,
-            children: [
-                {
-                    path: 'analysis',
-                    component: vAnalysis
-                },
-                {
-                    path: 'products',
-                    component: vProducts,
-
-                },
-                {
-                    path: 'addProduct',
-                    component: vProductForm
-                },
-                {
-                    path: 'productPosting',
-                    component: vProductsPosting,
-                },
-                {
-                    path: 'storages',
-                    component: vStorages,
-                },
-                {
-                    path: 'till',
-                    component: vTill
-                },
-                {
-                    path: 'addStorage',
-                    component: vStorageForm
-                },
-                {
-                    path: ':storageName',
-                    component: vTillForm
-                },
-                {
-                    path: 'buyers',
-                    component: vBuyers
-                },
-                {
-                    path: 'addBuyers',
-                    component: vBuyersForm
-                },
-                {
-                    path: 'productPosting/:postingToStorage',
-                    component: vProductsPostingForm
-                }
-            ]
+            path: '/analysis',
+            name: 'analysis',
+            component: vAnalysis
+        },
+        {
+            path: '/products',
+            name: 'products',
+            component: vProducts,
+        },
+        {
+            path: '/addProduct',
+            component: vProductForm
+        },
+        {
+            path: '/productPosting',
+            component: vProductsPosting,
+        },
+        {
+            path: '/prodPost/:productPosting',
+            name: 'PostingForm',
+            component: vProductsPostingForm,
+        },
+        {
+            path: '/storages',
+            name: 'storages',
+            component: vStorages,
+        },
+        {
+            path: '/till',
+            name: 'till',
+            component: vTill, 
+        },
+        {
+            path: '/:storageName',
+            component: vTillForm
+        },
+        {
+            path: '/addStorage',
+            component: vStorageForm
         },
         
+        {
+            path: '/buyers',
+            name: 'buyers',
+            component: vBuyers
+        },
+        {
+            path: '/addBuyers',
+            component: vBuyersForm
+        },
     ]
 })
 

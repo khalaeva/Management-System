@@ -10,32 +10,12 @@
                     class="dropdown-menu" 
                     aria-labelledby="dropdownMenuButton1"
                     >
-                  <li v-for="(store, index) in STORAGES" :key="index"><RouterLink :to="store.name" class="dropdown-item" href="#">{{ store.name }}</RouterLink></li>
+                  <li v-for="(store, index) in STORAGES" :key="index"><RouterLink :to="store.name" class="dropdown-item">{{ store.name }}</RouterLink></li>
                 </ul>
             </div>
-            <!-- <RouterLink to="addTill" class="v-till-add__link"><button type="button" class="btn btn-secondary">Открыть кассу</button></RouterLink>     -->
         </div>
         <vTillTables v-for="store in STORAGES" :key="store.id"
         :storeName="store.name"/>
-        <!-- <table class="table">
-            <thead>
-              <tr>
-                <th scope="col">№</th>
-                <th scope="col">Время</th>
-                <th scope="col">Покупатель</th>
-                <th scope="col">Сумма</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr v-for="order in ORDERS" :key="order.id">
-                <th scope="row">{{ order.id }}</th>
-                <td>{{ order.data }}</td>
-                <td>{{ order.buyer.name }} {{ order.buyer.lastName }}</td>
-                <td>{{ order.totalSum }} </td>
-              </tr>
-            </tbody>
-        </table> -->
-        <!-- <div>{{ BUYERS[0].name }}</div> -->
     </div>
 </template>
 

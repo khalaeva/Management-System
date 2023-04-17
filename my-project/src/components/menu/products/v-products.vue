@@ -1,4 +1,5 @@
 <template>
+    <RouterView>
     <div class="v-products">
         <div class="v-products-add">
             <h3 class="v-products-add__text">Товары</h3>
@@ -15,7 +16,6 @@
                     <th scope="col">Единица измерения</th>
                     <th scope="col">Закупочная цена</th>
                     <th scope="col">Цена продажи</th>
-                    <th scope="col">Склад</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -26,13 +26,12 @@
                     <td>{{ product.unit }}</td>
                     <td>{{ product.purchasePrice }}</td>
                     <td>{{ product.sellingPrice }}</td>
-                    <td>{{ product.storageName }}</td>
                   </tr>
                 </tbody>
             </table>
         </div>
     </div>
-    <RouterView/>
+    </RouterView>
 </template>
 
 <script>
