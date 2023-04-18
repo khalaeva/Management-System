@@ -7,7 +7,7 @@
             <button class="btn btn-outline-secondary">Год</button>
         </div>
         <div class="sell">
-            <p>Сегодня, понедельник 17</p>
+            <p>Сегодня, {{ getData() }}</p>
             <div class="money">
                 <p>Продаж: 0</p>
                 <p>Руб: 0</p>
@@ -28,7 +28,36 @@
 <script>
 
 export default {
-    name: 'v-analysis'
+    name: 'v-analysis',
+    methods: {
+        getData() {
+            const months = [
+            'января',
+            'февраля',
+            'марта',
+            'aпреля',
+            'мая',
+            'июня',
+            'июля',
+            'августа',
+            'сентября',
+            'октября',
+            'ноября',
+            'декабря'
+            ];
+            const weekdays = [
+            'воскресенье',
+            'понедельник',
+            'вторник',
+            'среда',
+            'четверг',
+            'пятница',
+            'суббота'
+            ];
+            const currentDate = new Date();
+            return (weekdays[currentDate.getDay()] + ' ' + currentDate.getDate() + ' ' + months[currentDate.getMonth()])
+        }
+    }
 }
 </script>
 
