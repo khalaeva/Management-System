@@ -32,18 +32,17 @@ export default {
         ...mapGetters([
             'STORAGES',
             'ORDERS',
-            //'BUYERS'
         ])
     },
     methods: {
         ...mapActions([
             'GET_ORDERS_FROM_API',
-            //'GET_BUYERS_FROM_API'
+            'GET_STORAGES_FROM_API'
         ]),
     },
     mounted() {
         this.GET_ORDERS_FROM_API()
-        //this.GET_BUYERS_FROM_API()
+        this.GET_STORAGES_FROM_API()
     }
 }
 </script>

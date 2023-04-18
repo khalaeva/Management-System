@@ -162,7 +162,11 @@ export default {
                 preSum: this.preSum,
                 totalSum: this.totalSum,
                 totalSale: this.totalSale,
-                data: new Date(),
+                data: {
+                    day: new Date().getDate(),
+                    month: new Date().getMonth(),
+                    year: new Date().getFullYear()
+                },
                 storageName: this.$route.params.storageName
             }
             axios.post('http://localhost:3000/orders', order);

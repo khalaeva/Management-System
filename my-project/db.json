@@ -224,6 +224,11 @@
       "name": "",
       "password": "",
       "id": 45
+    },
+    {
+      "name": "",
+      "password": "",
+      "id": 46
     }
   ],
   "storages": [
@@ -341,81 +346,11 @@
           "priceSale": 3000
         },
         {
-          "name": "Шорты",
+          "name": "Лонгслив",
           "description": "",
           "unit": "шт",
-          "purchasePrice": "3000",
-          "id": "3",
-          "sellingPrice": "3500",
-          "storageName": "Основной склад",
-          "quantity": 1,
-          "sale": 0,
-          "priceSale": 3500
-        }
-      ],
-      "buyer": {
-        "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
-        "phone": "",
-        "email": ""
-      },
-      "preSum": 6500,
-      "totalSum": 6500,
-      "totalSale": 0,
-      "data": "2023-04-16T13:27:10.582Z",
-      "storageName": "Основной склад",
-      "id": 1
-    },
-    {
-      "cart": [
-        {
-          "name": "Платье",
-          "description": "",
-          "unit": "шт",
-          "purchasePrice": "1000",
-          "id": "2",
-          "sellingPrice": "1500",
-          "storageName": "Основной склад",
-          "quantity": 2,
-          "sale": 0,
-          "priceSale": 3000
-        },
-        {
-          "name": "Блузка",
-          "description": "",
-          "unit": "шт",
-          "purchasePrice": "3000",
-          "id": "5",
-          "sellingPrice": "4500",
-          "storageName": "Основной склад",
-          "quantity": 1,
-          "sale": 0,
-          "priceSale": 4500
-        }
-      ],
-      "buyer": {
-        "id": 2,
-        "name": "Anna",
-        "lastName": "Khalaeva",
-        "phone": "+79823672376",
-        "email": "halaevaanna@asd.sd"
-      },
-      "preSum": 7500,
-      "totalSum": 7500,
-      "totalSale": 0,
-      "data": "2023-04-16T13:29:08.598Z",
-      "storageName": "Основной склад",
-      "id": 2
-    },
-    {
-      "cart": [
-        {
-          "name": "Шорты",
-          "description": "",
-          "unit": "шт",
-          "purchasePrice": "3000",
-          "id": "3",
+          "purchasePrice": "2000",
+          "id": "4",
           "sellingPrice": "3500",
           "storageName": "Основной склад",
           "quantity": 2,
@@ -430,41 +365,16 @@
         "phone": "",
         "email": ""
       },
-      "preSum": 7000,
-      "totalSum": 7000,
+      "preSum": 10000,
+      "totalSum": 10000,
       "totalSale": 0,
-      "data": "2023-04-16T13:47:16.914Z",
-      "storageName": "Склад 2",
-      "id": 3
-    },
-    {
-      "cart": [
-        {
-          "name": "Блузка",
-          "description": "",
-          "unit": "шт",
-          "purchasePrice": "3000",
-          "id": "5",
-          "sellingPrice": "4500",
-          "storageName": "Основной склад",
-          "quantity": 3,
-          "sale": "10",
-          "priceSale": 12150
-        }
-      ],
-      "buyer": {
-        "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
-        "phone": "",
-        "email": ""
+      "data": {
+        "day": 17,
+        "month": 3,
+        "year": 2023
       },
-      "preSum": 13500,
-      "totalSum": 12150,
-      "totalSale": 1350,
-      "data": "2023-04-16T13:47:23.430Z",
-      "storageName": "Склад 2",
-      "id": 4
+      "storageName": "блпа",
+      "id": 1
     },
     {
       "cart": [
@@ -477,38 +387,9 @@
           "sellingPrice": "3500",
           "storageName": "Основной склад",
           "quantity": 3,
-          "sale": "10",
-          "priceSale": 9450
-        },
-        {
-          "name": "Блузка",
-          "description": "",
-          "unit": "шт",
-          "purchasePrice": "3000",
-          "id": "5",
-          "sellingPrice": "4500",
-          "storageName": "Основной склад",
-          "quantity": 2,
           "sale": 0,
-          "priceSale": 9000
-        }
-      ],
-      "buyer": {
-        "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
-        "phone": "",
-        "email": ""
-      },
-      "preSum": 19500,
-      "totalSum": 18450,
-      "totalSale": 1050,
-      "data": "2023-04-16T14:09:15.400Z",
-      "storageName": "Склад 2",
-      "id": 5
-    },
-    {
-      "cart": [
+          "priceSale": 10500
+        },
         {
           "name": "Жилет",
           "description": "",
@@ -517,50 +398,9 @@
           "id": "1",
           "sellingPrice": "1500",
           "storageName": "Основной склад",
-          "quantity": 1,
+          "quantity": 2,
           "sale": 0,
-          "priceSale": 1500
-        }
-      ],
-      "buyer": {
-        "id": 2,
-        "name": "Anna",
-        "lastName": "Khalaeva",
-        "phone": "+79823672376",
-        "email": "halaevaanna@asd.sd"
-      },
-      "preSum": 1500,
-      "totalSum": 1500,
-      "totalSale": 0,
-      "data": "2023-04-16T14:09:37.925Z",
-      "storageName": "Основной склад",
-      "id": 6
-    },
-    {
-      "cart": [
-        {
-          "name": "Платье",
-          "description": "",
-          "unit": "шт",
-          "purchasePrice": "1000",
-          "id": "2",
-          "sellingPrice": "1500",
-          "storageName": "Основной склад",
-          "quantity": 1,
-          "sale": 0,
-          "priceSale": 1500
-        },
-        {
-          "name": "Шорты",
-          "description": "",
-          "unit": "шт",
-          "purchasePrice": "3000",
-          "id": "3",
-          "sellingPrice": "3500",
-          "storageName": "Основной склад",
-          "quantity": 4,
-          "sale": "20",
-          "priceSale": 11200
+          "priceSale": 3000
         }
       ],
       "buyer": {
@@ -570,12 +410,49 @@
         "phone": "",
         "email": ""
       },
-      "preSum": 29500,
-      "totalSum": 26700,
-      "totalSale": 2800,
-      "data": "2023-04-16T14:21:07.352Z",
+      "preSum": 13500,
+      "totalSum": 13500,
+      "totalSale": 0,
+      "data": {
+        "day": 18,
+        "month": 3,
+        "year": 2023
+      },
+      "storageName": "Основной склад",
+      "id": 2
+    },
+    {
+      "cart": [
+        {
+          "name": "Лонгслив",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "2000",
+          "id": "4",
+          "sellingPrice": "3500",
+          "storageName": "Основной склад",
+          "quantity": 1,
+          "sale": 0,
+          "priceSale": 3500
+        }
+      ],
+      "buyer": {
+        "id": 1,
+        "name": "Неизвестный",
+        "lastName": "Покупатель",
+        "phone": "",
+        "email": ""
+      },
+      "preSum": 3500,
+      "totalSum": 3500,
+      "totalSale": 0,
+      "data": {
+        "day": 18,
+        "month": 3,
+        "year": 2023
+      },
       "storageName": "Склад 2",
-      "id": 7
+      "id": 3
     }
   ],
   "buyers": [
