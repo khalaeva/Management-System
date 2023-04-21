@@ -164,7 +164,7 @@ export default {
                 totalSale: this.totalSale,
                 data: {
                     day: new Date().getDate(),
-                    month: new Date().getMonth(),
+                    month: new Date().getMonth() + 1,
                     year: new Date().getFullYear()
                 },
                 storageName: this.$route.params.storageName

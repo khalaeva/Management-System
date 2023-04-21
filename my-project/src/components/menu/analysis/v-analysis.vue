@@ -21,27 +21,23 @@
                 <p>Продаж: {{ counterOrders(new Date().getDate()) }}</p>
                 <p>Сумма: {{ summSell(new Date().getDate()) }} Р</p>
                 <p>По сравнению с воскресеньем: {{ summSell(new Date().getDate()) - summSell(new Date().getDate() - 1) }}
-                    ({{ Math.round((summSell(new Date().getDate()) - summSell(new Date().getDate() - 1))/summSell(new Date().getDate()) * 100) }}%)
+                    <span>({{ Math.round((summSell(new Date().getDate()) - summSell(new Date().getDate() - 1))/summSell(new Date().getDate()) * 100) }}%)</span>
                 </p>
             </div>
         </div>
-        <div class="sell-data">
-            <p>На этой неделе</p>
-            <div class="money">
-                <p>Продаж: 0</p>
-                <p>Руб: 0</p>
-                <p>По сравнению с воскресеньем: 0</p>
-            </div>
+        <div class="analysis_by_time">
+            <v-analysis-by-time :time="raioTime"/>
         </div>
     </div>
 </template>
 
 <script>
 import { mapActions, mapGetters } from 'vuex';
-
+import vAnalysisByTime from './v-analysis-by-time.vue';
 
 export default {
     name: 'v-analysis',
+    components: { vAnalysisByTime },
     data() {
         return {
             raioTime: 'week'

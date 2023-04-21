@@ -12,7 +12,7 @@
     <tbody>
       <tr v-for="order in ORDERS" :key="order.id">
         <th v-if="order.storageName === storeName" scope="row">{{ order.id }}</th>
-        <td v-if="order.storageName === storeName">{{ order.data }}</td>
+        <td v-if="order.storageName === storeName">{{ order.data.day }}/{{ order.data.month }}/{{ order.data.year }}</td>
         <td v-if="order.storageName === storeName">{{ order.buyer.name }} {{ order.buyer.lastName }}</td>
         <td v-if="order.storageName === storeName">{{ order.totalSum }} </td>
       </tr>
