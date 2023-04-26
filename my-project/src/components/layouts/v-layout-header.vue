@@ -8,8 +8,7 @@
             <RouterLink :to="{name: 'buyers'}" class="link-secondary"><h5>Покупатели</h5></RouterLink>
         </div>
         <div class="v-layout-header-right">
-            <p>Настройки</p>
-            <p>Личный кабинет</p>
+            <RouterLink :to="{name: 'lk'}" class="link-secondary"><h5>Личный кабинет</h5></RouterLink>
         </div>
     </div>
 </template>

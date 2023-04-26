@@ -12,6 +12,7 @@ import vBuyers from "@/components/menu/buyers/v-buyers.vue"
 import vBuyersForm from "@/components/menu/buyers/v-buyers-form.vue"
 import vProductsPosting from "@/components/menu/products/v-products-posting.vue"
 import vProductsPostingForm from "@/components/menu/products/v-product-posting-form.vue";
+import vUser from "@/components/v-user.vue"
 
 const router = createRouter({
     history: createWebHistory(), 
@@ -62,7 +63,11 @@ const router = createRouter({
             path: '/addStorage',
             component: vStorageForm
         },
-        
+        {
+            path: '/lk',
+            name: 'lk',
+            component: vUser
+        },
         {
             path: '/buyers',
             name: 'buyers',
