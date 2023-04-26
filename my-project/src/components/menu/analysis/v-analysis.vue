@@ -20,7 +20,7 @@
             <div class="money">
                 <p>Продаж: {{ counterOrders(new Date().getDate()) }}</p>
                 <p>Сумма: {{ summSell(new Date().getDate()) }} Р</p>
-                <p>По сравнению с воскресеньем: {{ summSell(new Date().getDate()) - summSell(new Date().getDate() - 1) }}
+                <p>По сравнению с предыдущим днем: {{ summSell(new Date().getDate()) - summSell(new Date().getDate() - 1)}} Р
                     <span>({{ Math.round((summSell(new Date().getDate()) - summSell(new Date().getDate() - 1))/summSell(new Date().getDate()) * 100) }}%)</span>
                 </p>
             </div>

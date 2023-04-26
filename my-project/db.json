@@ -9,6 +9,36 @@
       "name": "",
       "password": "",
       "id": 2
+    },
+    {
+      "name": "",
+      "password": "",
+      "id": 3
+    },
+    {
+      "name": "",
+      "password": "",
+      "id": 4
+    },
+    {
+      "name": "",
+      "password": "",
+      "id": 5
+    },
+    {
+      "name": "",
+      "password": "",
+      "id": 6
+    },
+    {
+      "name": "",
+      "password": "",
+      "id": 7
+    },
+    {
+      "name": "",
+      "password": "",
+      "id": 8
     }
   ],
   "storages": [
@@ -196,7 +226,7 @@
       "data": {
         "day": 18,
         "month": 4,
-        "year": 2023
+        "year": 2021
       },
       "storageName": "Основной склад",
       "id": 2
@@ -293,12 +323,111 @@
       "totalSum": 1500,
       "totalSale": 0,
       "data": {
-        "day": 21,
+        "day": 26,
         "month": 4,
         "year": 2023
       },
       "storageName": "Основной склад",
       "id": 5
+    },
+    {
+      "cart": [
+        {
+          "name": "Жилет",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1200",
+          "id": "1",
+          "sellingPrice": "1500",
+          "storageName": "Основной склад",
+          "quantity": 1,
+          "sale": 0,
+          "priceSale": 1500
+        }
+      ],
+      "buyer": {
+        "id": 1,
+        "name": "Неизвестный",
+        "lastName": "Покупатель",
+        "phone": "",
+        "email": ""
+      },
+      "preSum": 1500,
+      "totalSum": 1500,
+      "totalSale": 0,
+      "data": {
+        "day": 26,
+        "month": 3,
+        "year": 2023
+      },
+      "storageName": "Еще один склад ",
+      "id": 6
+    },
+    {
+      "cart": [
+        {
+          "name": "Лонгслив",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "2000",
+          "id": "4",
+          "sellingPrice": "3500",
+          "storageName": "Основной склад",
+          "quantity": 2,
+          "sale": 0,
+          "priceSale": 7000
+        }
+      ],
+      "buyer": {
+        "id": 1,
+        "name": "Неизвестный",
+        "lastName": "Покупатель",
+        "phone": "",
+        "email": ""
+      },
+      "preSum": 7000,
+      "totalSum": 7000,
+      "totalSale": 0,
+      "data": {
+        "day": 25,
+        "month": 4,
+        "year": 2021
+      },
+      "storageName": "Еще один склад ",
+      "id": 7
+    },
+    {
+      "cart": [
+        {
+          "name": "Лонгслив",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "2000",
+          "id": "4",
+          "sellingPrice": "3500",
+          "storageName": "Основной склад",
+          "quantity": 2,
+          "sale": 0,
+          "priceSale": 7000
+        }
+      ],
+      "buyer": {
+        "id": 1,
+        "name": "Неизвестный",
+        "lastName": "Покупатель",
+        "phone": "",
+        "email": ""
+      },
+      "preSum": 7000,
+      "totalSum": 7000,
+      "totalSale": 0,
+      "data": {
+        "day": 25,
+        "month": 4,
+        "year": 2023
+      },
+      "storageName": "блпа",
+      "id": 8
     }
   ],
   "buyers": [
