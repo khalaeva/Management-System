@@ -1,6 +1,6 @@
 <template>
   <div class="postingToStorage" style="width: 90%; margin: auto;">
-      <h1>{{ this.$route.params.productPosting }}</h1>
+      <h1>{{ STORAGES[this.$route.params.productPosting - 1].name }}</h1>
   </div>
   <div class="till-form">
     <div class="till-form-main">
@@ -69,7 +69,7 @@
       <div class="till-form-check">
           <h3 style="margin-bottom: 15px">Итого: {{ totalSum }} Р</h3>
           <h5>Количество: {{ totalQuan }}</h5>
-          <button @click="addPost" class="btn btn-secondary">Сохранить</button>
+          <RouterLink to="/productPosting"><button @click="addPost" class="btn btn-secondary">Сохранить</button></RouterLink>
       </div>
   </div>
 </template>
@@ -99,11 +99,14 @@ export default {
   computed: {
       ...mapGetters([
           'CART',
+          'STORAGES'
       ])
   },
   methods: {
       ...mapActions([
           'ADD_TO_CART',
+          'GET_STORAGES_FROM_API',
+          'CLEAR_CART'
       ]),
       showCart(prod) {
           this.prodCart = prod;
@@ -121,10 +124,10 @@ export default {
               totalSum: this.totalSum,
               totalQuan: this.totalQuan,
               data: new Date(),
-              storageName: this.$route.params.productPosting
+              storageName: this.STORAGES[this.$route.params.productPosting - 1].name
           }
           axios.post('http://localhost:3000/posts', post);
-          document.location.reload();
+          this.CLEAR_CART()
       }
   }
 }

@@ -2,7 +2,7 @@
     <p>{{ txt() }}</p>
     <p>Продаж: {{ orders }}</p>
     <p>Руб: {{ sum }} P</p>
-    <p>По сравнению с {{ diffTxt }}: {{ diffSumm }} ({{ Math.round(diffSumm/sum * 100) }} %)</p>
+    <p v-if="Math.round(diffSumm/sum * 100)">По сравнению с {{ diffTxt }}: {{ diffSumm }} ({{ Math.round(diffSumm/sum * 100) }} %)</p>
 </template>
 
 <script>

@@ -10,7 +10,7 @@
                     class="dropdown-menu" 
                     aria-labelledby="dropdownMenuButton1"
                     >
-                  <li v-for="(store, index) in STORAGES" :key="index"><RouterLink :to="{name: 'PostingForm', params: { productPosting: store.name }}" class="dropdown-item">{{ store.name }}</RouterLink></li>
+                  <li v-for="(store, index) in STORAGES" :key="index"><RouterLink :to="{name: 'PostingForm', params: { productPosting: store.id }}" class="dropdown-item">{{ store.name }}</RouterLink></li>
                 </ul>
             </div>
         </div>
@@ -30,7 +30,6 @@
                         <td>{{ post.data }}</td>
                         <td>{{ post.storageName }}</td>
                         <td>{{ post.totalSum }}</td>
-                        <!-- <td>{{ product.unit }}</td> -->
                     </tr>
                 </tbody>
             </table>

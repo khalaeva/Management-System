@@ -42,6 +42,10 @@ const store = createStore({
             } else {
                 state.cart.push(product);
                 }
+        },
+
+        CLEAR_CART: (state) => {
+            state.cart = []
         }
     },
 
@@ -110,6 +114,10 @@ const store = createStore({
         ADD_TO_CART({commit}, prod) {
             commit('SET_CART',  prod);
         },
+
+        CLEAR_CART({commit}) {
+            commit('CLEAR_CART')
+        }
     },
 
     getters: {

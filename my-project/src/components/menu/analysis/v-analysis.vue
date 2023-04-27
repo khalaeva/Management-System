@@ -1,7 +1,7 @@
 <template>
     <div class="v-analysis">
-        <h3 class="v-products-add__text">Продажи</h3>
-        <div class="btns">
+        <h3 class="v-products-add__text" style="margin-bottom: 30px">Продажи</h3>
+        <div class="btns" style="margin-bottom: 30px">
             <div class="form_radio_btn">
                 <input id="radio-1" type="radio" name="radio" value="week" v-model="raioTime">
                 <label for="radio-1">Неделя</label>
@@ -20,8 +20,9 @@
             <div class="money">
                 <p>Продаж: {{ counterOrders(new Date().getDate()) }}</p>
                 <p>Сумма: {{ summSell(new Date().getDate()) }} Р</p>
-                <p>По сравнению с предыдущим днем: {{ summSell(new Date().getDate()) - summSell(new Date().getDate() - 1)}} Р
-                    <span>({{ Math.round((summSell(new Date().getDate()) - summSell(new Date().getDate() - 1))/summSell(new Date().getDate()) * 100) }}%)</span>
+                <p >По сравнению с предыдущим днем: {{ summSell(new Date().getDate()) - summSell(new Date().getDate() - 1)}} Р
+                    <span v-if="summSell(new Date().getDate())">({{ Math.round((summSell(new Date().getDate()) - summSell(new Date().getDate() - 1))/summSell(new Date().getDate()) * 100) }}%)</span>
+                    <span v-else> (-100 %)</span>
                 </p>
             </div>
         </div>

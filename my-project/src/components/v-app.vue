@@ -19,7 +19,7 @@ export default {
         this.GET_STORAGES_FROM_API()
     },
     mounted() {
-        this.GET_STORAGES_FROM_API()
+        this.GET_STORAGES_FROM_API() 
     }
 }
 </script>
