@@ -4,6 +4,11 @@
       "name": "halaevaanna@gmail.com",
       "password": "26062001",
       "id": 1
+    },
+    {
+      "name": "halaevaanna@gmail.com",
+      "password": "1233",
+      "id": 2
     }
   ],
   "storages": [
@@ -420,6 +425,51 @@
       },
       "storageName": "блпа",
       "id": 9
+    },
+    {
+      "cart": [
+        {
+          "name": "Шорты",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "3000",
+          "id": "3",
+          "sellingPrice": "3500",
+          "storageName": "Основной склад",
+          "quantity": 1,
+          "sale": "10",
+          "priceSale": 3150
+        },
+        {
+          "name": "Платье",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1000",
+          "id": "2",
+          "sellingPrice": "1500",
+          "storageName": "Основной склад",
+          "quantity": 3,
+          "sale": "15",
+          "priceSale": 3825
+        }
+      ],
+      "buyer": {
+        "id": 1,
+        "name": "Неизвестный",
+        "lastName": "Покупатель",
+        "phone": "",
+        "email": ""
+      },
+      "preSum": 8000,
+      "totalSum": 6975,
+      "totalSale": 1025,
+      "data": {
+        "day": 27,
+        "month": 4,
+        "year": 2023
+      },
+      "storageName": "Основной склад",
+      "id": 10
     }
   ],
   "buyers": [
@@ -562,6 +612,35 @@
       "data": "2023-04-27T19:26:06.720Z",
       "storageName": "Основной склад",
       "id": 6
+    },
+    {
+      "products": [
+        {
+          "name": "Шорты",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "3000",
+          "id": "3",
+          "sellingPrice": "3500",
+          "storageName": "Основной склад",
+          "quantity": 3
+        },
+        {
+          "name": "Жилет",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1200",
+          "id": "1",
+          "sellingPrice": "1500",
+          "storageName": "Основной склад",
+          "quantity": 1
+        }
+      ],
+      "totalSum": 12000,
+      "totalQuan": 4,
+      "data": "2023-04-27T20:23:22.588Z",
+      "storageName": "Основной склад",
+      "id": 7
     }
   ]
 }
