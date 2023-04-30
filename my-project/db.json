@@ -1,70 +1,13 @@
 {
-  "login": [
+  "users": [
     {
-      "name": "halaevaanna@gmail.com",
-      "password": "26062001",
+      "email": "halaevaanna@mail.ru",
+      "password": "26",
+      "name": "Anna",
+      "lastName": "Khalaeva",
+      "fathName": "",
+      "phone": "",
       "id": 1
-    },
-    {
-      "name": "halaevaanna@gmail.com",
-      "password": "1233",
-      "id": 2
-    },
-    {
-      "id": 3
-    },
-    {
-      "id": 4
-    },
-    {
-      "name": "asd@sd",
-      "password": "asd",
-      "id": 5
-    },
-    {
-      "name": "a@ds",
-      "password": "sd",
-      "id": 6
-    },
-    {
-      "name": "asd@sd",
-      "password": "12",
-      "id": 7
-    },
-    {
-      "name": "sda",
-      "password": "asd",
-      "id": 8
-    },
-    {
-      "name": "df",
-      "password": "fd",
-      "id": 9
-    },
-    {
-      "name": "gj",
-      "password": "ghjg",
-      "id": 10
-    },
-    {
-      "name": "f",
-      "password": "f",
-      "id": 11
-    },
-    {
-      "name": "sda",
-      "password": "asd",
-      "id": 12
-    },
-    {
-      "name": "1.",
-      "password": "епа",
-      "id": 13
-    },
-    {
-      "name": "1.",
-      "password": "фу",
-      "id": 14
     }
   ],
   "storages": [

@@ -8,7 +8,7 @@ const store = createStore({
         cart: [],
         buyers: [],
         orders: [],
-        posts: []
+        posts: [],
     },
 
     mutations: {
@@ -46,6 +46,10 @@ const store = createStore({
 
         CLEAR_CART: (state) => {
             state.cart = []
+        },
+
+        SAVE_EMAIL: (state, email) => {
+            state.email = email
         }
     },
 
@@ -138,7 +142,7 @@ const store = createStore({
         },
         POSTS(state) {
             return state.posts;
-        }
+        },
     }
 });
 

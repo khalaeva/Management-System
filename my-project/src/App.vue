@@ -1,5 +1,5 @@
 <template>
-  <VLayoutHeader v-show="!(this.$route.name === 'index')"/>
+  <VLayoutHeader v-show="!(this.$route.name === 'index') && !(this.$route.path === '/registration')"/>
   <router-view></router-view>
 </template>
 

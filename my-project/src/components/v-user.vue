@@ -1,100 +1,86 @@
 <template>
-    <div class="user">
-        <p></p>
-        <div class="row g-3 align-items-center">
-            <div class="col-auto">
-              <label for="inputPassword6" class="col-form-label">Логин</label>
-            </div>
-            <div class="col-auto">
-              <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-            <div class="col-auto">
-              <span id="passwordHelpInline" class="form-text">
-                Must be 8-20 characters long.
-              </span>
-            </div>
+  <div class="user">
+    <h3 style="margin-bottom: 40px">{{user.email}}</h3>
+    <form class="user-form">
+      <div class="form-group row">
+        <label for="inputEmail3" class="col-sm-2 col-form-label">Логин</label>
+        <div class="col-sm-10">
+          <input type="email" class="form-control" id="inputEmail3" :placeholder="user.email">
         </div>
-        <button>Изменить пароль</button>
-        <div class="row g-3 align-items-center">
-            <div class="col-auto">
-              <label for="inputPassword6" class="col-form-label">Имя</label>
-            </div>
-            <div class="col-auto">
-              <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-            <div class="col-auto">
-              <span id="passwordHelpInline" class="form-text">
-                Must be 8-20 characters long.
-              </span>
-            </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPassword3" class="col-sm-2 col-form-label">Пароль</label>
+        <div class="col-sm-10">
+          <input type="password" class="form-control" id="inputPassword3" :placeholder="user.password">
         </div>
-        <div class="row g-3 align-items-center">
-            <div class="col-auto">
-              <label for="inputPassword6" class="col-form-label">Отчество</label>
-            </div>
-            <div class="col-auto">
-              <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-            <div class="col-auto">
-              <span id="passwordHelpInline" class="form-text">
-                Must be 8-20 characters long.
-              </span>
-            </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputName3" class="col-sm-2 col-form-label">Имя</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputName3" :placeholder="user.name">
         </div>
-        <div class="row g-3 align-items-center">
-            <div class="col-auto">
-              <label for="inputPassword6" class="col-form-label">Фамилия</label>
-            </div>
-            <div class="col-auto">
-              <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-            <div class="col-auto">
-              <span id="passwordHelpInline" class="form-text">
-                Must be 8-20 characters long.
-              </span>
-            </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputLastName" class="col-sm-2 col-form-label">Фамилия</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputLastName" :placeholder="user.lastName">
         </div>
-        <div class="row g-3 align-items-center">
-            <div class="col-auto">
-              <label for="inputPassword6" class="col-form-label">E-mail</label>
-            </div>
-            <div class="col-auto">
-              <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-            <div class="col-auto">
-              <span id="passwordHelpInline" class="form-text">
-                Must be 8-20 characters long.
-              </span>
-            </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputFathName" class="col-sm-2 col-form-label">Отчество</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputFathName" :placeholder="user.fathName">
         </div>
-        <div class="row g-3 align-items-center">
-            <div class="col-auto">
-              <label for="inputPassword6" class="col-form-label">Телефон</label>
-            </div>
-            <div class="col-auto">
-              <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-            <div class="col-auto">
-              <span id="passwordHelpInline" class="form-text">
-                Must be 8-20 characters long.
-              </span>
-            </div>
+      </div>
+      <div class="form-group row">
+        <label for="inputPhone" class="col-sm-2 col-form-label">Телефон</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="inputPhone" :placeholder="user.phone">
         </div>
-        <p>Фамилия</p>
-        <p>E-mail</p>
-        <p>Телефон</p>
-    </div>
+      </div>
+      <div>
+        <button class="btn btn-secondary">Сохранить</button>
+      </div>
+    </form>
+  </div>
 </template>
 
 <script>
+import { mapGetters } from 'vuex';
+
 export default {
-    name: 'v-user'
+    name: 'v-user',
+    data() {
+      return {
+        user: {
+          email: '',
+          password: '',
+          name: '',
+          lastName: '',
+          fathName: '',
+          phone: ''
+        }
+      }
+    },
+    computed: {
+      ...mapGetters([
+        'EMAIL'
+      ])
+    },
+    mounted() {
+      console.log(this.EMAIL)
+    }
 }
 </script>
 
 <style scoped lang="scss">
 .user {
+    width: 40%;
     margin-left: 100px;
     margin-top: 40px;
+}
+.user-form > div {
+  margin-left: 20px;
+  margin-bottom: 20px;
 }
 </style>

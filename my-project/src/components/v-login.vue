@@ -16,7 +16,7 @@
                 id="exampleInputEmail1" 
                 aria-describedby="emailHelp" 
                 placeholder="E-mail"
-                v-model="login.name">
+                v-model="user.email">
                 <small style="color:red" v-if="errors[0]">{{ errors[0] }}!</small>
             </div>
             <div class="user_login__i form-group">
@@ -26,45 +26,58 @@
                 class="form-control" 
                 id="exampleInputPassword1" 
                 placeholder="Пароль"
-                v-model="login.password">
+                v-model="user.password">
                 <small style="color:red" v-if="errors[1]">{{ errors[1] }}!</small>
             </div>
-                <button type="button" @click="checkForm" class="btn btn-secondary" style="margin-bottom: 10px">Log In</button>
-            <br>
+                <button type="button" @click="checkForm" class="btn btn-secondary" style="margin-bottom: 10px">Вход</button>
+                <RouterLink to="/registration" style="color: gray; margin-left: 20px">Регистрация</RouterLink>
         </form>
     </div>
     </template>
     
     <script>
-    import router from '@/router/router'
-import axios from 'axios'
+    import axios from 'axios'
+    import { mapActions } from 'vuex'
 
     export default {
         name: 'v-login',
         data() {
             return {
-                login: {
-                    name: '',
+                user: {
+                    email: '',
                     password: ''
                 },
                 errors: []
             }
         },
         methods: {
+            ...mapActions ([
+                'SAVE_EMAIL'
+            ]),
             checkForm() {
-                if (this.login.name && this.login.password) {
-                    axios.post('http://localhost:3000/login', this.login)
-                    router.push("/analysis")
-                }
                 this.errors = [];
-                if (!this.login.name) {
+                if (!this.user.email) {
                     this.errors.push('Требуется указать E-mail')
-                } else if (!this.validEmail(this.login.name)) {
+                } else if (!this.validEmail(this.user.email)) {
                     this.errors.push('Укажите корректный E-mail')
                 }
+                else(this.errors.push(null))
 
-                if (!this.login.password) {
+                if (!this.user.password) {
                     this.errors.push('Требуется указать пароль')
+                }
+                else(this.errors.push(null))
+
+                if (!this.errors.reduce((a,b)=>a+b)) {
+                    const getUserById = async (userId) => {
+                    try {
+                        const response = await axios.get(`http://localhost:3000/users?id=${userId}`)
+                        return response.data
+                        } catch (err) {
+                            console.error(err.toJSON())
+                        }
+                    }
+                    console.log(getUserById('1'))
                 }
             },
             validEmail(email) {

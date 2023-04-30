@@ -13,6 +13,7 @@ import vBuyersForm from "@/components/menu/buyers/v-buyers-form.vue"
 import vProductsPosting from "@/components/menu/products/v-products-posting.vue"
 import vProductsPostingForm from "@/components/menu/products/v-product-posting-form.vue";
 import vUser from "@/components/v-user.vue"
+import vRegistration from "@/components/v-registration.vue";
 
 const router = createRouter({
     history: createWebHistory(), 
@@ -21,6 +22,11 @@ const router = createRouter({
             path: '/', 
             name: 'index', 
             component: vLogin,
+        },
+        {
+            path: '/registration', 
+            name: 'registration', 
+            component: vRegistration,
         },
         {
             path: '/analysis',

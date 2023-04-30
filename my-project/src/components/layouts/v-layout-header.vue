@@ -9,6 +9,7 @@
         </div>
         <div class="v-layout-header-right">
             <RouterLink :to="{name: 'lk'}" class="link-secondary"><h5>Личный кабинет</h5></RouterLink>
+            <RouterLink to="/" class="link-secondary"><h5>Выход</h5></RouterLink>
         </div>
     </div>
 </template>
