@@ -140,6 +140,10 @@ const store = createStore({
 
         CLEAR_CART({commit}) {
             commit('CLEAR_CART')
+        },
+
+        SET_USER_TO_STATE({commit}, user) {
+            commit('SET_USER_TO_STATE', user)
         }
     },
 
