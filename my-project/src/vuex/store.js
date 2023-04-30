@@ -9,6 +9,7 @@ const store = createStore({
         buyers: [],
         orders: [],
         posts: [],
+        user: []
     },
 
     mutations: {
@@ -48,8 +49,8 @@ const store = createStore({
             state.cart = []
         },
 
-        SAVE_EMAIL: (state, email) => {
-            state.email = email
+        SET_USER_TO_STATE: (state, user) => {
+            state.user = user
         }
     },
 
@@ -78,6 +79,18 @@ const store = createStore({
                 return e;
             }
         },
+
+        async GET_USER_FROM_API({commit}, email) {
+            try {
+                const user = await axios.get(`http://localhost:3000/users?email=${email}`)
+                commit('SET_USER_TO_STATE', user.data);
+                return user;
+            } catch (e) {
+                console.log(e);
+                return 'Неверный пароль';
+            }
+        },
+
         async GET_BUYERS_FROM_API({commit}) {
             try {
                 const buyers = await axios('http://localhost:3000/buyers', {
@@ -143,6 +156,9 @@ const store = createStore({
         POSTS(state) {
             return state.posts;
         },
+        USER(state) {
+            return state.user;
+        }
     }
 });
 

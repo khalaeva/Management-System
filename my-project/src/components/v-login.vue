@@ -28,6 +28,7 @@
                 placeholder="Пароль"
                 v-model="user.password">
                 <small style="color:red" v-if="errors[1]">{{ errors[1] }}!</small>
+                <small style="color:red" v-if="errors[2]">{{ errors[2] }}!</small>
             </div>
                 <button type="button" @click="checkForm" class="btn btn-secondary" style="margin-bottom: 10px">Вход</button>
                 <RouterLink to="/registration" style="color: gray; margin-left: 20px">Регистрация</RouterLink>
@@ -36,8 +37,8 @@
     </template>
     
     <script>
-    import axios from 'axios'
-    import { mapActions } from 'vuex'
+    import { mapActions, mapGetters } from 'vuex'
+    import router from '@/router/router';
 
     export default {
         name: 'v-login',
@@ -50,9 +51,14 @@
                 errors: []
             }
         },
+        computed: {
+            ...mapGetters ([
+                'USER'
+            ])
+        },
         methods: {
             ...mapActions ([
-                'SAVE_EMAIL'
+                'GET_USER_FROM_API'
             ]),
             checkForm() {
                 this.errors = [];
@@ -69,15 +75,11 @@
                 else(this.errors.push(null))
 
                 if (!this.errors.reduce((a,b)=>a+b)) {
-                    const getUserById = async (userId) => {
-                    try {
-                        const response = await axios.get(`http://localhost:3000/users?id=${userId}`)
-                        return response.data
-                        } catch (err) {
-                            console.error(err.toJSON())
-                        }
+                    this.GET_USER_FROM_API(this.user.email)
+                    if (!this.USER[0]) {
+                        router.push({ name: 'analysis' })
                     }
-                    console.log(getUserById('1'))
+                    else(this.errors.push('Пользователь не найден'))
                 }
             },
             validEmail(email) {
