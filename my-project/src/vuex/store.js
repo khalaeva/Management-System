@@ -1,5 +1,6 @@
 import { createStore } from 'vuex'
 import axios from 'axios';
+import router from '@/router/router';
 
 const store = createStore({
     state: {
@@ -84,10 +85,16 @@ const store = createStore({
             try {
                 const user = await axios.get(`http://localhost:3000/users?email=${email}`)
                 commit('SET_USER_TO_STATE', user.data);
-                return user;
+                if (this.state.user[0]) {
+                    router.push({ name: 'analysis' })
+                }
+                else 
+                {
+                    return 'Пользователь не найден'
+                }
             } catch (e) {
                 console.log(e);
-                return 'Неверный пароль';
+                return e;
             }
         },
 
@@ -109,7 +116,6 @@ const store = createStore({
                     method: "GET"
                 });
                 commit('SET_ORDERS_TO_STATE', orders.data);
-                return orders;
             } catch (e) {
                 console.log(e);
                 return e;

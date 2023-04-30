@@ -38,7 +38,6 @@
     
     <script>
     import { mapActions, mapGetters } from 'vuex'
-    import router from '@/router/router';
 
     export default {
         name: 'v-login',
@@ -75,19 +74,17 @@
                 else(this.errors.push(null))
 
                 if (!this.errors.reduce((a,b)=>a+b)) {
-                    this.GET_USER_FROM_API(this.user.email)
-                    if (!this.USER[0]) {
-                        router.push({ name: 'analysis' })
+                    const res = this.GET_USER_FROM_API(this.user.email)
+                    if (res) {
+                        this.errors.push('Пользователь не найден!')
                     }
-                    else(this.errors.push('Пользователь не найден'))
                 }
             },
             validEmail(email) {
                 var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
                 return re.test(email);
-            }
-        },
-        
+            },
+        }
     }
     </script>
     

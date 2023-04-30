@@ -64,11 +64,11 @@ export default {
     },
     computed: {
       ...mapGetters([
-        'EMAIL'
+        'USER'
       ])
     },
     mounted() {
-      console.log(this.EMAIL)
+      console.log(this.USER)
     }
 }
 </script>

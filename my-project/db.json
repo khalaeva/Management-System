@@ -592,6 +592,117 @@
       },
       "storageName": "Еще один склад ",
       "id": 13
+    },
+    {
+      "cart": [
+        {
+          "name": "Жилет",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1200",
+          "id": "1",
+          "sellingPrice": "1500",
+          "storageName": "Основной склад",
+          "quantity": 1,
+          "sale": 0,
+          "priceSale": 1500
+        },
+        {
+          "name": "Шорты",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "3000",
+          "id": "3",
+          "sellingPrice": "3500",
+          "storageName": "Основной склад",
+          "quantity": 1,
+          "sale": 0,
+          "priceSale": 3500
+        }
+      ],
+      "buyer": {
+        "id": 1,
+        "name": "Неизвестный",
+        "lastName": "Покупатель",
+        "phone": "",
+        "email": ""
+      },
+      "preSum": 5000,
+      "totalSum": 5000,
+      "totalSale": 0,
+      "data": {
+        "day": 30,
+        "month": 4,
+        "year": 2023
+      },
+      "storageName": "Основной склад",
+      "id": 14
+    },
+    {
+      "cart": [
+        {
+          "name": "Лонгслив",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "2000",
+          "id": "4",
+          "sellingPrice": "3500",
+          "storageName": "Основной склад",
+          "quantity": 3,
+          "sale": 0,
+          "priceSale": 10500
+        }
+      ],
+      "buyer": {
+        "id": 1,
+        "name": "Неизвестный",
+        "lastName": "Покупатель",
+        "phone": "",
+        "email": ""
+      },
+      "preSum": 10500,
+      "totalSum": 10500,
+      "totalSale": 0,
+      "data": {
+        "day": 30,
+        "month": 4,
+        "year": 2023
+      },
+      "storageName": "Основной склад",
+      "id": 15
+    },
+    {
+      "cart": [
+        {
+          "name": "Платье",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1000",
+          "id": "2",
+          "sellingPrice": "1500",
+          "storageName": "Основной склад",
+          "quantity": 1,
+          "sale": 0,
+          "priceSale": 1500
+        }
+      ],
+      "buyer": {
+        "id": 1,
+        "name": "Неизвестный",
+        "lastName": "Покупатель",
+        "phone": "",
+        "email": ""
+      },
+      "preSum": 1500,
+      "totalSum": 1500,
+      "totalSale": 0,
+      "data": {
+        "day": 30,
+        "month": 4,
+        "year": 2023
+      },
+      "storageName": "Основной склад",
+      "id": 16
     }
   ],
   "buyers": [

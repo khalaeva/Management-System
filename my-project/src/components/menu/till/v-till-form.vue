@@ -170,7 +170,7 @@ export default {
                 storageName: this.$route.params.storageName
             }
             axios.post('http://localhost:3000/orders', order);
-            console.log(order);
+            console.log(this.CART);
             document.location.reload();
         }
     },
