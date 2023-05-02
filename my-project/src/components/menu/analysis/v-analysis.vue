@@ -16,7 +16,7 @@
             </div>
         </div>
         <div class="sell">
-            <p>Сегодня, {{ getData() }}</p>
+            <h5>Сегодня, {{ getData() }}</h5>
             <div class="money">
                 <p>Продаж: {{ counterOrders(new Date().getDate()) }}</p>
                 <p>Сумма: {{ summSell(new Date().getDate()) }} Р</p>
@@ -106,8 +106,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.btn {
-    margin-right: 5px;
+.sell{
+    width: 500px;
+    padding: 10px;
+    border: 1px solid lightgray;
+    margin-bottom: 20px;
 }
 .form_radio_btn {
 	display: inline-block;
@@ -142,6 +145,7 @@ export default {
 	color: #666;
 }
 .v-analysis {
+    position: relative;
     width: 90%;
     margin: auto;
     &-add {

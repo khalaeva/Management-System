@@ -137,6 +137,7 @@ export default {
     },
     methods: {
         ...mapActions([
+            'CLEAR_CART',
             'ADD_TO_CART',
             'GET_BUYERS_FROM_API'
         ]),
@@ -170,8 +171,11 @@ export default {
                 storageName: this.$route.params.storageName
             }
             axios.post('http://localhost:3000/orders', order);
-            console.log(this.CART);
-            document.location.reload();
+            this.CLEAR_CART();
+            this.payment = ['card'];
+            this.preSum = 0;
+            this.totalSum = 0;
+            this.totalSale = 0
         }
     },
     mounted() {

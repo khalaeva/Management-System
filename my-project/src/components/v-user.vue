@@ -49,6 +49,7 @@
 </template>
 
 <script>
+import axios from 'axios';
 import { mapActions, mapGetters } from 'vuex';
 
 export default {
@@ -93,6 +94,7 @@ export default {
 
         if (!this.errors.reduce((a,b)=>a+b)) {
           this.SET_USER_TO_STATE(this.user)
+          axios.put(`http://localhost:3000/users/${this.user.id}`, this.user)
           this.res = 'Данные успешно изменены!'
         }
       },
@@ -106,8 +108,8 @@ export default {
       }
     },
     mounted() {
-      console.log(this.USER[0])
-      // this.user = this.USER[0]
+      console.log(this.USER)
+      this.user = this.USER
     }
     }
 </script>

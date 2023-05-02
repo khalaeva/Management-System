@@ -27,7 +27,7 @@
                 <tbody>
                     <tr v-for="post in POSTS" :key="post.id">
                         <th scope="row">{{ post.id }}</th>
-                        <td>{{ post.data }}</td>
+                        <td>{{ post.data.day }}/{{ post.data.month }}/{{ post.data.year }}</td>
                         <td>{{ post.storageName }}</td>
                         <td>{{ post.totalSum }}</td>
                     </tr>

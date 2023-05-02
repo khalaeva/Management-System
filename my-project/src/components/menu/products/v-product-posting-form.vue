@@ -123,7 +123,11 @@ export default {
               products: this.CART,
               totalSum: this.totalSum,
               totalQuan: this.totalQuan,
-              data: new Date(),
+              data: {
+                    day: new Date().getDate(),
+                    month: new Date().getMonth() + 1,
+                    year: new Date().getFullYear()
+              },
               storageName: this.STORAGES[this.$route.params.productPosting - 1].name
           }
           axios.post('http://localhost:3000/posts', post);

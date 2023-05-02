@@ -10,7 +10,7 @@ const store = createStore({
         buyers: [],
         orders: [],
         posts: [],
-        user: []
+        user: Object
     },
 
     mutations: {
@@ -52,6 +52,7 @@ const store = createStore({
 
         SET_USER_TO_STATE: (state, user) => {
             state.user = user
+            console.log(state.user)
         }
     },
 
@@ -84,8 +85,8 @@ const store = createStore({
         async GET_USER_FROM_API({commit}, email) {
             try {
                 const user = await axios.get(`http://localhost:3000/users?email=${email}`)
-                commit('SET_USER_TO_STATE', user.data);
-                if (this.state.user[0]) {
+                commit('SET_USER_TO_STATE', user.data[0]);
+                if (this.state.user) {
                     router.push({ name: 'analysis' })
                 }
                 else 
