@@ -11,7 +11,6 @@
                     <th scope="col">Код</th>
                     <th scope="col">Наименование</th>
                     <th scope="col">Адрес</th>
-                    <th scope="col">Комментарий к адресу</th>
                     <th scope="col">Комментарий</th>
                     <th scope="col">Индекс</th>
                   </tr>
@@ -20,8 +19,7 @@
                   <tr v-for="storage in STORAGES" :key="storage.id">
                     <th scope="row">{{ storage.id }}</th>
                     <td>{{ storage.name }}</td>
-                    <td>{{ storage.addres }}</td>
-                    <td>{{ storage.commAdress }}</td>
+                    <td>{{ storage.adress }}</td>
                     <td>{{ storage.comment }}</td>
                     <td>{{ storage.index }}</td>
                   </tr>

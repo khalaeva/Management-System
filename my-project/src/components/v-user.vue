@@ -1,5 +1,6 @@
 <template>
-  <div class="user">
+<div class="wr">
+  <div class="user" style="width: 500px">
     <h3 style="margin-bottom: 40px">Личный кабинет</h3>
     <form class="user-form">
       <div class="form-group row">
@@ -40,20 +41,30 @@
           <small style="color:red" v-if="errors[1]">{{ errors[1] }}</small>
         </div>
       </div>
-      <div>
+      <div style="display: flex; justify-content: space-around;">
         <button type="button" @click="checkForm" class="btn btn-secondary">Сохранить</button>
+        <p style="color: green">{{ res }}</p>
+        <button type="button" @click="checkForm" class="btn btn-secondary">Изменить пароль</button>
         <p style="color: green">{{ res }}</p>
       </div>
     </form>
   </div>
+  <div style="display: flex; align-items: center">
+    <vEmployerVue/>
+  </div>
+</div>
 </template>
 
 <script>
 import axios from 'axios';
+import vEmployerVue from './v-employer.vue';
 import { mapActions, mapGetters } from 'vuex';
 
 export default {
     name: 'v-user',
+    components: {
+      vEmployerVue
+    },
     data() {
       return {
         user: {
@@ -115,6 +126,10 @@ export default {
 </script>
 
 <style scoped lang="scss">
+.wr {
+  display: flex;
+  justify-content: space-around;
+}
 .user {
     width: 40%;
     margin-left: 100px;

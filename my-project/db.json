@@ -13,35 +13,35 @@
   "storages": [
     {
       "name": "Основной склад",
-      "adress": "Площадь Ленина",
+      "adress": "Россия, г. Самара, Березовая ул., д. 8",
       "commAdress": "",
       "comment": "",
       "id": 1,
-      "index": "123312"
+      "index": "195043"
     },
     {
-      "name": "Склад 2",
-      "adress": "Площадь Ленина",
+      "name": "Склад Уренгой",
+      "adress": "Россия, г. Новый Уренгой, Партизанская ул., д. 22",
       "commAdress": "",
       "comment": "",
       "id": 2,
-      "index": "123312"
+      "index": "195030"
     },
     {
-      "name": "Еще один склад ",
-      "adress": "",
+      "name": "Склад Тюмень",
+      "adress": "Россия, г. Тюмень, Школьный пер., д. 10",
       "commAdress": "",
       "comment": "",
       "id": 3,
-      "index": ""
+      "index": "195043"
     },
     {
-      "name": "блпа",
-      "adress": "",
+      "name": "Склад Кострома",
+      "adress": "Россия, г. Кострома, Сельская ул., д. 19",
       "commAdress": "",
       "comment": "",
       "id": 4,
-      "index": ""
+      "index": "192177"
     }
   ],
   "products": [
@@ -89,6 +89,60 @@
       "id": "5",
       "sellingPrice": "4500",
       "storageName": "Основной склад"
+    },
+    {
+      "name": "Джинсы",
+      "description": "",
+      "unit": "шт",
+      "purchasePrice": "1500",
+      "id": "6",
+      "sellingPrice": "2000",
+      "storageName": "Основной склад"
+    },
+    {
+      "name": "Футболка",
+      "description": "",
+      "unit": "шт",
+      "purchasePrice": "500",
+      "sellingPrice": "1000",
+      "storageName": "Основной склад",
+      "id": "7"
+    },
+    {
+      "name": "Леггинсы",
+      "description": "",
+      "unit": "шт",
+      "purchasePrice": "1500",
+      "id": "8",
+      "sellingPrice": "2000",
+      "storageName": "Основной склад"
+    },
+    {
+      "name": "Водолазка",
+      "description": "",
+      "unit": "шт",
+      "purchasePrice": "1600",
+      "id": "9",
+      "sellingPrice": "2300",
+      "storageName": "Основной склад"
+    },
+    {
+      "name": "Брюки",
+      "description": "",
+      "unit": "шт",
+      "purchasePrice": "2500",
+      "id": "10",
+      "sellingPrice": "3000",
+      "storageName": "Основной склад"
+    },
+    {
+      "name": "Спортивный костюм",
+      "description": "",
+      "unit": "шт",
+      "purchasePrice": "3500",
+      "id": "11",
+      "sellingPrice": "4000",
+      "storageName": "Основной склад"
     }
   ],
   "orders": [
@@ -121,8 +175,8 @@
       ],
       "buyer": {
         "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
+        "name": "Халаева",
+        "lastName": "Анна",
         "phone": "",
         "email": ""
       },
@@ -199,8 +253,8 @@
       ],
       "buyer": {
         "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
+        "name": "Трофим",
+        "lastName": "Осипов",
         "phone": "",
         "email": ""
       },
@@ -232,8 +286,8 @@
       ],
       "buyer": {
         "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
+        "name": "Антон",
+        "lastName": "Анасенко",
         "phone": "",
         "email": ""
       },
@@ -298,8 +352,8 @@
       ],
       "buyer": {
         "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
+        "name": "Федор",
+        "lastName": "Теребов",
         "phone": "",
         "email": ""
       },
@@ -331,8 +385,8 @@
       ],
       "buyer": {
         "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
+        "name": "Герман",
+        "lastName": "Курзыбов",
         "phone": "",
         "email": ""
       },
@@ -364,8 +418,8 @@
       ],
       "buyer": {
         "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
+        "name": "Лидия",
+        "lastName": "Подкользина",
         "phone": "",
         "email": ""
       },
@@ -409,8 +463,8 @@
       ],
       "buyer": {
         "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
+        "name": "Кирилл",
+        "lastName": "Ягодин",
         "phone": "",
         "email": ""
       },
@@ -454,8 +508,8 @@
       ],
       "buyer": {
         "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
+        "name": "Леонид",
+        "lastName": "Букавицкий",
         "phone": "",
         "email": ""
       },
@@ -487,8 +541,8 @@
       ],
       "buyer": {
         "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
+        "name": "Тарас",
+        "lastName": "Яналов",
         "phone": "",
         "email": ""
       },
@@ -532,8 +586,8 @@
       ],
       "buyer": {
         "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
+        "name": "Данила",
+        "lastName": "Куксюк",
         "phone": "",
         "email": ""
       },
@@ -577,8 +631,8 @@
       ],
       "buyer": {
         "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
+        "name": "Ефим",
+        "lastName": "Низов",
         "phone": "",
         "email": ""
       },
@@ -622,8 +676,8 @@
       ],
       "buyer": {
         "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
+        "name": "Федор",
+        "lastName": "Толбоев",
         "phone": "",
         "email": ""
       },
@@ -655,8 +709,8 @@
       ],
       "buyer": {
         "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
+        "name": "Ульяна",
+        "lastName": "Ярилина",
         "phone": "",
         "email": ""
       },
@@ -688,8 +742,8 @@
       ],
       "buyer": {
         "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
+        "name": "Марина",
+        "lastName": "Чигиркина",
         "phone": "",
         "email": ""
       },
@@ -787,8 +841,8 @@
       ],
       "buyer": {
         "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
+        "name": "Зинаида",
+        "lastName": "Пенкина",
         "phone": "",
         "email": ""
       },
@@ -796,7 +850,7 @@
       "totalSum": 10500,
       "totalSale": 0,
       "data": {
-        "day": 2,
+        "day": 8,
         "month": 5,
         "year": 2023
       },
@@ -837,11 +891,11 @@
         "phone": "",
         "email": ""
       },
-      "preSum": 0,
-      "totalSum": 0,
+      "preSum": 20000,
+      "totalSum": 18000,
       "totalSale": 0,
       "data": {
-        "day": 2,
+        "day": 8,
         "month": 5,
         "year": 2023
       },
@@ -877,8 +931,8 @@
       ],
       "buyer": {
         "id": 1,
-        "name": "Неизвестный",
-        "lastName": "Покупатель",
+        "name": "Варвара",
+        "lastName": "Набокина",
         "phone": "",
         "email": ""
       },
@@ -886,7 +940,7 @@
       "totalSum": 5000,
       "totalSale": 0,
       "data": {
-        "day": 2,
+        "day": 9,
         "month": 5,
         "year": 2023
       },
@@ -919,7 +973,7 @@
       "totalSum": 1500,
       "totalSale": 0,
       "data": {
-        "day": 2,
+        "day": 9,
         "month": 5,
         "year": 2023
       },
@@ -937,24 +991,66 @@
     },
     {
       "id": 2,
-      "name": "Anna",
-      "lastName": "Khalaeva",
-      "phone": "+79823672376",
+      "name": "Анна",
+      "lastName": "Халаева",
+      "phone": "+7 (982) 367-23-76",
       "email": "halaevaanna@asd.sd"
     },
     {
-      "name": "Андрей",
-      "lastName": "Халаев",
-      "phone": "+79812322112",
-      "email": "sdfsd@mail.ru",
+      "name": "Антон",
+      "lastName": "Анасенко",
+      "phone": "+7 (988) 505-98-68",
+      "email": "sdfsвd@mail.ru",
       "id": 3
     },
     {
-      "name": "вапва",
-      "lastName": "вапв",
-      "phone": "+23123",
-      "email": "haslf",
+      "name": "Леонид",
+      "lastName": "Букавицкий",
+      "phone": "+7 (936) 737-79-26",
+      "email": "jkh@mail.ru",
       "id": 4
+    },
+    {
+      "name": "Тарас ",
+      "lastName": "Яналов",
+      "phone": "+7 (926) 797-81-39",
+      "email": "edfg@mail.ru",
+      "id": 5
+    },
+    {
+      "name": "Данила",
+      "lastName": "Куксюк",
+      "phone": "+7 (926) 797-81-39",
+      "email": "asfh@mail.ru",
+      "id": 6
+    },
+    {
+      "name": "Федор",
+      "lastName": "Толбоев",
+      "phone": "+7 (986) 250-58-68",
+      "email": "khug@mail.ru",
+      "id": 7
+    },
+    {
+      "name": "Ульяна",
+      "lastName": "Ярилина",
+      "phone": "+7 (930) 469-67-26",
+      "email": "mvbxxcv@mail.ru",
+      "id": 8
+    },
+    {
+      "name": "Марина",
+      "lastName": "Чигиркина",
+      "phone": "+7 (937) 739-66-41",
+      "email": "gfsehgn@mail.ru",
+      "id": 9
+    },
+    {
+      "name": "Варвара",
+      "lastName": "Набокина",
+      "phone": "+7 (937) 739-66-41",
+      "email": "hkgh@mail.ru",
+      "id": 10
     }
   ],
   "posts": [
@@ -984,12 +1080,381 @@
       "totalSum": 6000,
       "totalQuan": 4,
       "data": {
-        "day": 2,
-        "month": 5,
+        "day": 15,
+        "month": 1,
         "year": 2023
       },
       "storageName": "Основной склад",
       "id": 1
+    },
+    {
+      "products": [
+        {
+          "name": "Брюки",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "2500",
+          "id": "10",
+          "sellingPrice": "3000",
+          "storageName": "Основной склад",
+          "quantity": 4
+        },
+        {
+          "name": "Джинсы",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1500",
+          "id": "6",
+          "sellingPrice": "2000",
+          "storageName": "Основной склад",
+          "quantity": 1
+        },
+        {
+          "name": "Жилет",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1200",
+          "id": "1",
+          "sellingPrice": "1500",
+          "storageName": "Основной склад",
+          "quantity": 1
+        },
+        {
+          "name": "Спортивный костюм",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "3500",
+          "id": "11",
+          "sellingPrice": "4000",
+          "storageName": "Основной склад",
+          "quantity": 1
+        }
+      ],
+      "totalSum": 19500,
+      "totalQuan": 7,
+      "data": {
+        "day": 15,
+        "month": 1,
+        "year": 2023
+      },
+      "storageName": "Склад Уренгой",
+      "id": 2
+    },
+    {
+      "products": [
+        {
+          "name": "Футболка",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "500",
+          "sellingPrice": "1000",
+          "storageName": "Основной склад",
+          "id": "7",
+          "quantity": 1
+        },
+        {
+          "name": "Водолазка",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1600",
+          "id": "9",
+          "sellingPrice": "2300",
+          "storageName": "Основной склад",
+          "quantity": 1
+        },
+        {
+          "name": "Шорты",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "3000",
+          "id": "3",
+          "sellingPrice": "3500",
+          "storageName": "Основной склад",
+          "quantity": 1
+        },
+        {
+          "name": "Брюки",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "2500",
+          "id": "10",
+          "sellingPrice": "3000",
+          "storageName": "Основной склад",
+          "quantity": 4
+        },
+        {
+          "name": "Спортивный костюм",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "3500",
+          "id": "11",
+          "sellingPrice": "4000",
+          "storageName": "Основной склад",
+          "quantity": 3
+        },
+        {
+          "name": "Жилет",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1200",
+          "id": "1",
+          "sellingPrice": "1500",
+          "storageName": "Основной склад",
+          "quantity": 1
+        }
+      ],
+      "totalSum": 32300,
+      "totalQuan": 11,
+      "data": {
+        "day": 20,
+        "month": 2,
+        "year": 2023
+      },
+      "storageName": "Склад Кострома",
+      "id": 3
+    },
+    {
+      "products": [
+        {
+          "name": "Футболка",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "500",
+          "sellingPrice": "1000",
+          "storageName": "Основной склад",
+          "id": "7",
+          "quantity": 3
+        },
+        {
+          "name": "Леггинсы",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1500",
+          "id": "8",
+          "sellingPrice": "2000",
+          "storageName": "Основной склад",
+          "quantity": 3
+        },
+        {
+          "name": "Жилет",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1200",
+          "id": "1",
+          "sellingPrice": "1500",
+          "storageName": "Основной склад",
+          "quantity": 4
+        },
+        {
+          "name": "Спортивный костюм",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "3500",
+          "id": "11",
+          "sellingPrice": "4000",
+          "storageName": "Основной склад",
+          "quantity": 3
+        },
+        {
+          "name": "Платье",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1000",
+          "id": "2",
+          "sellingPrice": "1500",
+          "storageName": "Основной склад",
+          "quantity": 1
+        },
+        {
+          "name": "Шорты",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "3000",
+          "id": "3",
+          "sellingPrice": "3500",
+          "storageName": "Основной склад",
+          "quantity": 3
+        }
+      ],
+      "totalSum": 39000,
+      "totalQuan": 17,
+      "data": {
+        "day": 21,
+        "month": 2,
+        "year": 2023
+      },
+      "storageName": "Основной склад",
+      "id": 4
+    },
+    {
+      "products": [
+        {
+          "name": "Лонгслив",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "2000",
+          "id": "4",
+          "sellingPrice": "3500",
+          "storageName": "Основной склад",
+          "quantity": 8
+        }
+      ],
+      "totalSum": 28000,
+      "totalQuan": 8,
+      "data": {
+        "day": 25,
+        "month": 3,
+        "year": 2023
+      },
+      "storageName": "Склад Тюмень",
+      "id": 5
+    },
+    {
+      "products": [
+        {
+          "name": "Жилет",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1200",
+          "id": "1",
+          "sellingPrice": "1500",
+          "storageName": "Основной склад",
+          "quantity": 12
+        }
+      ],
+      "totalSum": 18000,
+      "totalQuan": 12,
+      "data": {
+        "day": 10,
+        "month": 4,
+        "year": 2023
+      },
+      "storageName": "Склад Кострома",
+      "id": 6
+    },
+    {
+      "products": [
+        {
+          "name": "Футболка",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "500",
+          "sellingPrice": "1000",
+          "storageName": "Основной склад",
+          "id": "7",
+          "quantity": 6
+        },
+        {
+          "name": "Платье",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1000",
+          "id": "2",
+          "sellingPrice": "1500",
+          "storageName": "Основной склад",
+          "quantity": 7
+        }
+      ],
+      "totalSum": 22500,
+      "totalQuan": 17,
+      "data": {
+        "day": 10,
+        "month": 4,
+        "year": 2023
+      },
+      "storageName": "Склад Кострома",
+      "id": 7
+    },
+    {
+      "products": [
+        {
+          "name": "Джинсы",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1500",
+          "id": "6",
+          "sellingPrice": "2000",
+          "storageName": "Основной склад",
+          "quantity": 3
+        },
+        {
+          "name": "Спортивный костюм",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "3500",
+          "id": "11",
+          "sellingPrice": "4000",
+          "storageName": "Основной склад",
+          "quantity": 10
+        }
+      ],
+      "totalSum": 46000,
+      "totalQuan": 13,
+      "data": {
+        "day": 27,
+        "month": 4,
+        "year": 2023
+      },
+      "storageName": "Склад Тюмень",
+      "id": 8
+    },
+    {
+      "products": [
+        {
+          "name": "Платье",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1000",
+          "id": "2",
+          "sellingPrice": "1500",
+          "storageName": "Основной склад",
+          "quantity": 10
+        }
+      ],
+      "totalSum": 15000,
+      "totalQuan": 10,
+      "data": {
+        "day": 15,
+        "month": 5,
+        "year": 2023
+      },
+      "storageName": "Склад Кострома",
+      "id": 9
+    },
+    {
+      "products": [],
+      "totalSum": 10000,
+      "totalQuan": 3,
+      "data": {
+        "day": 26,
+        "month": 5,
+        "year": 2023
+      },
+      "storageName": "Основной склад",
+      "id": 10
+    },
+    {
+      "products": [
+        {
+          "name": "Леггинсы",
+          "description": "",
+          "unit": "шт",
+          "purchasePrice": "1500",
+          "id": "8",
+          "sellingPrice": "2000",
+          "storageName": "Основной склад",
+          "quantity": 8
+        }
+      ],
+      "totalSum": 16000,
+      "totalQuan": 8,
+      "data": {
+        "day": 28,
+        "month": 5,
+        "year": 2023
+      },
+      "storageName": "Склад Уренгой",
+      "id": 11
     }
   ]
 }

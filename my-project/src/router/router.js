@@ -24,6 +24,11 @@ const router = createRouter({
             component: vLogin,
         },
         {
+            path: '/prodPost/:productPosting',
+            name: 'PostingForm',
+            component: vProductsPostingForm,
+        },
+        {
             path: '/registration', 
             name: 'registration', 
             component: vRegistration,
@@ -45,11 +50,6 @@ const router = createRouter({
         {
             path: '/productPosting',
             component: vProductsPosting,
-        },
-        {
-            path: '/prodPost/:productPosting',
-            name: 'PostingForm',
-            component: vProductsPostingForm,
         },
         {
             path: '/storages',

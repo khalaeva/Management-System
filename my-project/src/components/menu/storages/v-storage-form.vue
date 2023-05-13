@@ -10,17 +10,13 @@
           <input type="text" class="form-control" id="adress" v-model="storage.adress">
         </div>
         <div class="col-12">
-          <label for="commAdress" class="form-label">Комментарий к адресу</label>
-          <input type="text" class="form-control" id="commAdress" v-model="storage.commAdress">
-        </div>
-        <div class="col-12">
           <label for="comment" class="form-label">Комментарий</label>
           <input type="text" class="form-control" id="comment" v-model="storage.comment">
         </div>
-        <div class="col-md-6">
+        <!-- <div class="col-md-6">
           <label for="id" class="form-label">Код</label>
           <input type="text" class="form-control" id="id" v-model="storage.id">
-        </div>
+        </div> -->
         <div class="col-md-6">
           <label for="index" class="form-label">Индекс</label>
           <input type="text" class="form-control" id="index" v-model="storage.index">
