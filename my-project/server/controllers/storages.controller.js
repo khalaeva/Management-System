@@ -8,7 +8,8 @@ class StoragesController {
             res.json('Склад уже существует!')
         }
         else {
-            const newStore = await db.query('INSERT INTO storages (name_storage, address, comment_store, index_store, business_owner_id) values ($1, $2, $3, $4, $5) RETURNING *', [name, address, comment_store, index_store, id])
+            const newStore = await db.query('INSERT INTO storages (name_storage, address, comment_store, index_store, business_owner_id) values ($1, $2, $3, $4, $5) RETURNING *', 
+            [name, address, comment_store, index_store, id])
             res.json(newStore)
         }
     }
