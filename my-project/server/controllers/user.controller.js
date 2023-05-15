@@ -2,13 +2,15 @@ const db = require('../db')
 
 class UserController {
     async createUser(req, res) {
-        const {name, last_name, email} = req.body
-        const newPerson = await db.query('INSERT INTO business_owners (first_name, last_name, email) values ($1, $2, $3) RETURNING *', [name, last_name, email])
-        res.json(newPerson.rows[0])
-    }
-    async getUsers(req, res) {
-        const users = await db.query('SELECT * FROM business_owners')
-        res.json(users.rows)
+        const {name, last_name, phone, email} = req.body
+        const candidate = await db.query('SELECT * FROM business_owners WHERE first_name = $1 AND last_name = $2 and email = $3', [name, last_name, email])
+        if(candidate.rows.length) {
+            res.json('Пользователь уже существует!')
+        }
+        else {
+            const newPerson = await db.query('INSERT INTO business_owners (first_name, last_name, phone, email) values ($1, $2, $3, $4) RETURNING *', [name, last_name, phone, email])
+            res.json(newPerson)
+        }
     }
     async getOneUser(req, res) {
         const id = req.params.id
@@ -16,10 +18,10 @@ class UserController {
         res.json(user.rows[0])
     }
     async updateUser(req, res) {
-        const {id, name, last_name} = req.body
+        const {id, name, last_name, phone} = req.body
         const user = await db.query(
-            'UPDATE business_owners SET first_name = $1, last_name = $2 WHERE business_owner_id = $3', 
-            [name, last_name, id]
+            'UPDATE business_owners SET first_name = $1, last_name = $2, phone = $3 WHERE business_owner_id = $4', 
+            [name, last_name, phone, id]
         )
         res.json(user)
     }   
